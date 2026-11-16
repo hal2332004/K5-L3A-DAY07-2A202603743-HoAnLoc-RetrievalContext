@@ -63,47 +63,57 @@ if bench_path.exists():
 
 
 class Day7ServerHandler(http.server.SimpleHTTPRequestHandler):
+    def serve_file(self, file_path: Path, content_type: str = "text/html; charset=utf-8"):
+        if file_path.exists():
+            self.send_response(200)
+            self.send_header("Content-Type", content_type)
+            self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+            self.end_headers()
+            with open(file_path, "rb") as f:
+                self.wfile.write(f.read())
+        else:
+            self.send_error(404, f"File {file_path.name} not found")
+
     def do_GET(self):
-        if self.path in ("/", "/index.html"):
+        # Normalize request path: remove query parameters and trailing slash
+        clean_path = self.path.split("?")[0].rstrip("/")
+        if not clean_path:
+            clean_path = "/"
+
+        if clean_path in ("/", "/index", "/index.html"):
             html_path = Path(__file__).parent / "index.html"
-            if html_path.exists():
-                self.send_response(200)
-                self.send_header("Content-Type", "text/html; charset=utf-8")
-                self.end_headers()
-                with open(html_path, "rb") as f:
-                    self.wfile.write(f.read())
-            else:
-                self.send_error(404, "index.html not found")
-        elif self.path in ("/bonus_report", "/bonus_report.html"):
+            self.serve_file(html_path)
+        elif clean_path in ("/bonus_report", "/bonus_report.html"):
             report_path = Path(__file__).parent / "bonus_report.html"
-            if report_path.exists():
-                self.send_response(200)
-                self.send_header("Content-Type", "text/html; charset=utf-8")
-                self.end_headers()
-                with open(report_path, "rb") as f:
-                    self.wfile.write(f.read())
-            else:
-                self.send_error(404, "bonus_report.html not found")
-        elif self.path == "/api/benchmark":
+            if not report_path.exists():
+                report_path = project_root / "bonus_report.html"
+            self.serve_file(report_path)
+        elif clean_path == "/api/benchmark":
             self.send_json(BENCHMARK_QUESTIONS)
-        elif self.path == "/api/benchmark/advanced":
+        elif clean_path == "/api/benchmark/advanced":
             adv_bench_file = project_root / "data/advanced_benchmark.json"
             if adv_bench_file.exists():
                 with open(adv_bench_file, "r", encoding="utf-8") as f:
                     self.send_json(json.load(f))
             else:
                 self.send_json([])
-        elif self.path == "/api/audit/advanced":
+        elif clean_path == "/api/audit/advanced":
             audit_file = project_root / "results/advanced_test_audit.json"
             if audit_file.exists():
                 with open(audit_file, "r", encoding="utf-8") as f:
                     self.send_json(json.load(f))
             else:
                 self.send_json({})
-        elif self.path == "/api/summary":
-            # Consolidate results for benchmark dashboard
+        elif clean_path == "/api/summary":
+            # Consolidate results for benchmark dashboard (Dev + Test + Day 6 Rerank)
             retrieval_file = project_root / "results/dev_retrieval_summary.json"
             agent_file = project_root / "results/agent_summary_dev_hybrid.json"
+            test_retrieval_file = project_root / "results/selected_test_retrieval.json"
+            test_official_file = project_root / "results/test_summary_official.json"
+            test_hybrid_file = project_root / "results/agent_summary_test_hybrid.json"
+            test_traces_file = project_root / "results/agent_traces_test_hybrid.json"
+            day6_rerank_file = project_root / "results/day06_rerank_metrics.json"
+
             summary_payload = {}
             if retrieval_file.exists():
                 with open(retrieval_file, "r", encoding="utf-8") as f:
@@ -111,6 +121,21 @@ class Day7ServerHandler(http.server.SimpleHTTPRequestHandler):
             if agent_file.exists():
                 with open(agent_file, "r", encoding="utf-8") as f:
                     summary_payload["agent_summary"] = json.load(f)
+            if test_retrieval_file.exists():
+                with open(test_retrieval_file, "r", encoding="utf-8") as f:
+                    summary_payload["retrieval_test"] = json.load(f)
+            if test_official_file.exists():
+                with open(test_official_file, "r", encoding="utf-8") as f:
+                    summary_payload["agent_test_official"] = json.load(f)
+            if test_hybrid_file.exists():
+                with open(test_hybrid_file, "r", encoding="utf-8") as f:
+                    summary_payload["agent_test_hybrid"] = json.load(f)
+            if test_traces_file.exists():
+                with open(test_traces_file, "r", encoding="utf-8") as f:
+                    summary_payload["test_traces"] = json.load(f)
+            if day6_rerank_file.exists():
+                with open(day6_rerank_file, "r", encoding="utf-8") as f:
+                    summary_payload["day06_rerank"] = json.load(f)
             self.send_json(summary_payload)
         else:
             super().do_GET()
