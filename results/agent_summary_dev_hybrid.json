@@ -1,0 +1,24 @@
+{
+  "split": "dev",
+  "engine": "hybrid",
+  "budget": 1500,
+  "total_cases": 17,
+  "tool_use_rate": "17/17 (100.0%)",
+  "avg_searches_per_query": 1.29,
+  "search_distribution": {
+    "1_searches": 14,
+    "2_searches": 1,
+    "3_searches": 2
+  },
+  "answered": "13/17 (76.5%)",
+  "abstain_total": "4/17 (23.5%)",
+  "correct_abstention_on_unanswerable": "2/2 (100.0%)",
+  "false_abstention_on_answerable": "2/15 (13.3%)",
+  "citation_context_validity": "14/14 (100.0%)",
+  "answer_citation_coverage": "13/13",
+  "provider_errors": 0,
+  "median_ms": 4079.07,
+  "total_prompt_tokens": 18747,
+  "total_completion_tokens": 1986,
+  "est_cost_usd": 0.004
+}

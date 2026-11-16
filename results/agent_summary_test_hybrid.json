@@ -1,0 +1,24 @@
+{
+  "split": "test",
+  "engine": "hybrid",
+  "budget": 1500,
+  "total_cases": 7,
+  "tool_use_rate": "6/7 (85.7%)",
+  "avg_searches_per_query": 1.14,
+  "search_distribution": {
+    "0_searches": 1,
+    "1_searches": 5,
+    "3_searches": 1
+  },
+  "answered": "4/7 (57.1%)",
+  "abstain_total": "2/7 (28.6%)",
+  "correct_abstention_on_unanswerable": "2/2 (100.0%)",
+  "false_abstention_on_answerable": "0/5 (0.0%)",
+  "citation_context_validity": "4/4 (100.0%)",
+  "answer_citation_coverage": "4/4",
+  "provider_errors": 1,
+  "median_ms": 5771.45,
+  "total_prompt_tokens": 6964,
+  "total_completion_tokens": 584,
+  "est_cost_usd": 0.00139
+}

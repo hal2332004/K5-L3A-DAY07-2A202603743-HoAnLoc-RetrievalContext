@@ -1,0 +1,290 @@
+[
+  {
+    "id": "adv_dev_tab_01",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Bảng"
+  },
+  {
+    "id": "adv_dev_tab_02",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Bảng"
+  },
+  {
+    "id": "adv_dev_tab_03",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Bảng"
+  },
+  {
+    "id": "adv_dev_fig_01",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Ảnh, sơ đồ"
+  },
+  {
+    "id": "adv_dev_fig_02",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Ảnh, sơ đồ"
+  },
+  {
+    "id": "adv_dev_fig_03",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Ảnh, sơ đồ"
+  },
+  {
+    "id": "adv_dev_chart_01",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Biểu đồ"
+  },
+  {
+    "id": "adv_dev_chart_02",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Biểu đồ"
+  },
+  {
+    "id": "adv_dev_chart_03",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Biểu đồ"
+  },
+  {
+    "id": "adv_dev_multi_01",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Multi-hop"
+  },
+  {
+    "id": "adv_dev_multi_02",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Multi-hop"
+  },
+  {
+    "id": "adv_dev_multi_03",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Multi-hop"
+  },
+  {
+    "id": "adv_dev_text_01",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Text"
+  },
+  {
+    "id": "adv_dev_text_02",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Text"
+  },
+  {
+    "id": "adv_dev_text_03",
+    "split": "dev",
+    "answerable": true,
+    "main_group": "Text"
+  },
+  {
+    "id": "adv_dev_abs_01",
+    "split": "dev",
+    "answerable": false,
+    "main_group": "Thiếu bằng chứng"
+  },
+  {
+    "id": "adv_dev_abs_02",
+    "split": "dev",
+    "answerable": false,
+    "main_group": "Thiếu bằng chứng"
+  },
+  {
+    "id": "adv_dev_abs_03",
+    "split": "dev",
+    "answerable": false,
+    "main_group": "Thiếu bằng chứng"
+  },
+  {
+    "id": "adv_test_tab_01",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Bảng"
+  },
+  {
+    "id": "adv_test_tab_02",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Bảng"
+  },
+  {
+    "id": "adv_test_tab_03",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Bảng"
+  },
+  {
+    "id": "adv_test_tab_04",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Bảng"
+  },
+  {
+    "id": "adv_test_tab_05",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Bảng"
+  },
+  {
+    "id": "adv_test_tab_06",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Bảng"
+  },
+  {
+    "id": "adv_test_fig_01",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Ảnh, sơ đồ"
+  },
+  {
+    "id": "adv_test_fig_02",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Ảnh, sơ đồ"
+  },
+  {
+    "id": "adv_test_fig_03",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Ảnh, sơ đồ"
+  },
+  {
+    "id": "adv_test_fig_04",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Ảnh, sơ đồ"
+  },
+  {
+    "id": "adv_test_fig_05",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Ảnh, sơ đồ"
+  },
+  {
+    "id": "adv_test_chart_01",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Biểu đồ"
+  },
+  {
+    "id": "adv_test_chart_02",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Biểu đồ"
+  },
+  {
+    "id": "adv_test_chart_03",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Biểu đồ"
+  },
+  {
+    "id": "adv_test_chart_04",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Biểu đồ"
+  },
+  {
+    "id": "adv_test_chart_05",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Biểu đồ"
+  },
+  {
+    "id": "adv_test_multi_01",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Multi-hop"
+  },
+  {
+    "id": "adv_test_multi_02",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Multi-hop"
+  },
+  {
+    "id": "adv_test_multi_03",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Multi-hop"
+  },
+  {
+    "id": "adv_test_multi_04",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Multi-hop"
+  },
+  {
+    "id": "adv_test_text_01",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Text"
+  },
+  {
+    "id": "adv_test_text_02",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Text"
+  },
+  {
+    "id": "adv_test_text_03",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Text"
+  },
+  {
+    "id": "adv_test_text_04",
+    "split": "test",
+    "answerable": true,
+    "main_group": "Text"
+  },
+  {
+    "id": "adv_test_abs_01",
+    "split": "test",
+    "answerable": false,
+    "main_group": "Thiếu bằng chứng"
+  },
+  {
+    "id": "adv_test_abs_02",
+    "split": "test",
+    "answerable": false,
+    "main_group": "Thiếu bằng chứng"
+  },
+  {
+    "id": "adv_test_abs_03",
+    "split": "test",
+    "answerable": false,
+    "main_group": "Thiếu bằng chứng"
+  },
+  {
+    "id": "adv_test_abs_04",
+    "split": "test",
+    "answerable": false,
+    "main_group": "Thiếu bằng chứng"
+  },
+  {
+    "id": "adv_test_abs_05",
+    "split": "test",
+    "answerable": false,
+    "main_group": "Thiếu bằng chứng"
+  },
+  {
+    "id": "adv_test_abs_06",
+    "split": "test",
+    "answerable": false,
+    "main_group": "Thiếu bằng chứng"
+  }
+]

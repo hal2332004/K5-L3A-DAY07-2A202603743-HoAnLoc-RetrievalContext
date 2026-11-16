@@ -1,0 +1,174 @@
+[
+  {
+    "id": "q01",
+    "split": "dev",
+    "question": "What are the three layers of any AI application stack according to Chip Huyen?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q02",
+    "split": "dev",
+    "question": "Why do language models use tokens as their unit instead of words or characters?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q03",
+    "split": "dev",
+    "question": "What is the primary role of post-training in foundation models?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q04",
+    "split": "dev",
+    "question": "What is top-k sampling designed to achieve during text generation?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q05",
+    "split": "dev",
+    "question": "In what way does adapting an existing foundation model compare in effort to training one from scratch?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q06",
+    "split": "dev",
+    "question": "How does nucleus sampling differ dynamically from top-k sampling?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q07",
+    "split": "dev",
+    "question": "In the AI engineering stack discussed in Chapter 1, which categories saw the highest increases in 2023?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q08",
+    "split": "dev",
+    "question": "Why are recurrent neural networks particularly vulnerable to vanishing and exploding gradients?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q09",
+    "split": "dev",
+    "question": "Why are raw pre-trained language models not immediately suitable for interactive chatbot conversations?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q10",
+    "split": "dev",
+    "question": "What empirical performance gains do RLHF and DPO provide over supervised fine-tuning alone?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q11",
+    "split": "dev",
+    "question": "Under Chapter 2 sampling strategies, what drawback can occur if sampling tokens strictly by probability distribution?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q12",
+    "split": "dev",
+    "question": "Does top-p sampling necessarily reduce the softmax computation load compared to top-k?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q13",
+    "split": "dev",
+    "question": "What does a suffix like 13B signify when appended to a model name like Llama-13B?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q14",
+    "split": "dev",
+    "question": "In Chapter 1 use cases, how fast did GitHub Copilot reach $100 million in annual recurring revenue?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q15",
+    "split": "dev",
+    "question": "Can masked language models like BERT be employed for generating text?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q16",
+    "split": "test",
+    "question": "What supervision method did OpenAI utilize to train the CLIP language-image model without manual labeling?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q17",
+    "split": "test",
+    "question": "Which generative AI application is consistently reported as the most popular in industry surveys?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q18",
+    "split": "test",
+    "question": "In Chapter 2 on training data, what percentage of the Common Crawl corpus is in English?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q19",
+    "split": "test",
+    "question": "What level of generation does test time compute target compared to individual token sampling?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q20",
+    "split": "test",
+    "question": "In Chapter 2 under post-training, how many volunteers did LAION mobilize to create conversational data?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q_abs_dev_01",
+    "split": "dev",
+    "question": "How does Megatron-LM implement 3D tensor parallelism across 8x H100 GPUs in Chapter 3?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The corpus only covers Chapters 1 & 2 (pages 25-136); Chapter 3 on distributed training is not in the ingested textbook."
+  },
+  {
+    "id": "q_abs_dev_02",
+    "split": "dev",
+    "question": "What is O'Reilly Media's student refund policy for damaged physical copies of this book?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Commercial publisher refund and exchange policies are not part of technical engineering book contents."
+  },
+  {
+    "id": "q_abs_test_01",
+    "split": "test",
+    "question": "What is the exact volume discount percentage offered by OpenAI for non-profit organizations deploying GPT-4o?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Specific enterprise or non-profit API pricing discount rates are external vendor commercial policies not mentioned in the book."
+  },
+  {
+    "id": "q_abs_test_02",
+    "split": "test",
+    "question": "According to Chapter 2, what is the exact hardware spec of Google TPU v5e pod optical interconnect bandwidth?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Chapter 2 introduces foundation models conceptually; TPU v5e pod interconnect bandwidth hardware specifications are absent."
+  }
+]

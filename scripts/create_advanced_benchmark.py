@@ -1,0 +1,728 @@
+import json
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+data_dir = ROOT_DIR / "data"
+
+benchmark_questions = [
+    # ========================== DEV SPLIT (18 questions) ==========================
+    # --- Dev: Bảng (3) ---
+    {
+        "id": "adv_dev_tab_01",
+        "split": "dev",
+        "main_group": "Bảng",
+        "question": "According to Table 2-4 on page 88, what is the model dimension and feedforward dimension of Llama 2-70B?",
+        "answerable": True,
+        "expected_answer": "According to Table 2-4, Llama 2-70B has a model dimension of 8,192 and a feedforward dimension of 22,016.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 88,
+                "evidence": "Llama 2-70B 80 8,192 22,016 32K 4K"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_tab_02",
+        "split": "dev",
+        "main_group": "Bảng",
+        "question": "In Table 2-1 on page 76, what is the percentage of Common Crawl accounted for by the German language?",
+        "answerable": True,
+        "expected_answer": "German accounts for 5.8811% of Common Crawl.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 76,
+                "evidence": "German de 134 5.8811"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_tab_03",
+        "split": "dev",
+        "main_group": "Bảng",
+        "question": "According to Table 2-3 on page 81, what was OpenAI CLIP ViT-B/32's accuracy on the ImageNet dataset?",
+        "answerable": True,
+        "expected_answer": "OpenAI CLIP ViT-B/32 achieved 63.2% accuracy on ImageNet.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 81,
+                "evidence": "ImageNet 63.2 62.9"
+            }
+        ]
+    },
+    # --- Dev: Ảnh, Sơ đồ (3) ---
+    {
+        "id": "adv_dev_fig_01",
+        "split": "dev",
+        "main_group": "Ảnh, sơ đồ",
+        "question": "According to Figure 1-14 on page 62, which layer of the AI engineering stack includes vector databases and inference serving engines?",
+        "answerable": True,
+        "expected_answer": "Vector databases and inference serving engines belong to the Infrastructure layer at the bottom of the AI engineering stack.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 62,
+                "evidence": "Three layers of the AI engineering stack"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_fig_02",
+        "split": "dev",
+        "main_group": "Ảnh, sơ đồ",
+        "question": "In Figure 1-2 on page 29, which architecture uses bidirectional context to predict masked tokens?",
+        "answerable": True,
+        "expected_answer": "The Masked language model architecture (such as BERT) uses bidirectional context to predict masked tokens.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 29,
+                "evidence": "Autoregressive language model and masked language model"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_fig_03",
+        "split": "dev",
+        "main_group": "Ảnh, sơ đồ",
+        "question": "In Figure 1-1 on page 27, how does GPT-4 break down the contraction 'can\'t' into subword tokens?",
+        "answerable": True,
+        "expected_answer": "GPT-4 breaks the word 'can\'t' into two subword tokens: 'can' and ''t'.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 27,
+                "evidence": "word “can’t” is broken"
+            }
+        ]
+    },
+    # --- Dev: Biểu đồ (3) ---
+    {
+        "id": "adv_dev_chart_01",
+        "split": "dev",
+        "main_group": "Biểu đồ",
+        "question": "According to Figure 1-11 on page 58, by approximately how much did the cost of AI reasoning drop between 2022 and mid-2024?",
+        "answerable": True,
+        "expected_answer": "The cost of AI reasoning rapidly dropped over time by more than 100x (from ~$30 down to under $0.20 per million tokens).",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 58,
+                "evidence": "Figure 1-11. The cost of AI reasoning rapidly drops over time"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_chart_02",
+        "split": "dev",
+        "main_group": "Biểu đồ",
+        "question": "In Figure 1-7 on page 43, what percentage of open source GitHub AI repositories belong to Personal Assistants & Chatbots?",
+        "answerable": True,
+        "expected_answer": "Personal Assistants & Chatbots account for 21% of the open source GitHub repositories.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 43,
+                "evidence": "Distribution of use cases in the 205 open source repositories on GitHub"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_chart_03",
+        "split": "dev",
+        "main_group": "Biểu đồ",
+        "question": "According to Figure 1-9 on page 45, which group of developers experienced higher relative productivity gains from AI: junior or senior developers?",
+        "answerable": True,
+        "expected_answer": "Junior developers (less experienced developers) experienced higher relative productivity gains.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 45,
+                "evidence": "especially for sim‐\nple tasks and less experienced developers"
+            }
+        ]
+    },
+    # --- Dev: Multi-hop (3) ---
+    {
+        "id": "adv_dev_multi_01",
+        "split": "dev",
+        "main_group": "Multi-hop",
+        "question": "Comparing Table 2-4 on page 88 and Table 2-1 on page 76, how many times larger is Llama 3's context length of 128K compared to Llama 2's context length of 4K?",
+        "answerable": True,
+        "expected_answer": "Llama 3's context length of 128K is 32 times larger than Llama 2's context length of 4K (128 / 4 = 32).",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 88,
+                "evidence": "Llama 2-7B 32 4,096 11,008 32K 4K"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_multi_02",
+        "split": "dev",
+        "main_group": "Multi-hop",
+        "question": "Cross-referencing the three AI stack layers in Figure 1-14 on page 62 with post-training in Chapter 2, which layer of the stack is responsible for fine-tuning and alignment (RLHF)?",
+        "answerable": True,
+        "expected_answer": "The Model Development layer (middle layer) is responsible for fine-tuning and alignment (RLHF).",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 62,
+                "evidence": "Three layers of the AI engineering stack"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_multi_03",
+        "split": "dev",
+        "main_group": "Multi-hop",
+        "question": "Looking at developer productivity in Figure 1-9 on page 45 and open-source use cases in Figure 1-7 on page 43, why is coding the most popular generative AI use case?",
+        "answerable": True,
+        "expected_answer": "Coding is the most popular use case (28%) because AI models are highly effective at coding tasks (providing 25-50% speedups in code generation and 2x in docs) and early AI engineers are themselves developers.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 44,
+                "evidence": "AI coding tools are popular both because AI is good at coding and because early AI\nengineers are coders"
+            }
+        ]
+    },
+    # --- Dev: Text (3) ---
+    {
+        "id": "adv_dev_text_01",
+        "split": "dev",
+        "main_group": "Text",
+        "question": "According to the text, what is the term used to describe morphemes or subwords?",
+        "answerable": True,
+        "expected_answer": "Morphemes or subwords are described as tokens.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 70,
+                "evidence": "tokens (morphemes or subwords)"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_text_02",
+        "split": "dev",
+        "main_group": "Text",
+        "question": "In what year did Google introduce the transformer architecture in the Attention Is All You Need paper?",
+        "answerable": True,
+        "expected_answer": "Google introduced the transformer architecture in 2017.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 34,
+                "evidence": "transformer architecture (Vaswani et al., 2017)"
+            }
+        ]
+    },
+    {
+        "id": "adv_dev_text_03",
+        "split": "dev",
+        "main_group": "Text",
+        "question": "According to Chapter 2, what are the three golden goals for training data?",
+        "answerable": True,
+        "expected_answer": "Quantity, quality, and diversity are the three golden goals for training data.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 94,
+                "evidence": "Quantity, quality, and diversity are the three golden goals for train‐\ning data"
+            }
+        ]
+    },
+    # --- Dev: Thiếu bằng chứng (3) ---
+    {
+        "id": "adv_dev_abs_01",
+        "split": "dev",
+        "main_group": "Thiếu bằng chứng",
+        "question": "What is the exact hardware latency in microseconds of NVIDIA NVLink 4 switches as specified in Chapter 2?",
+        "answerable": False,
+        "expected_answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+        "gold": []
+    },
+    {
+        "id": "adv_dev_abs_02",
+        "split": "dev",
+        "main_group": "Thiếu bằng chứng",
+        "question": "How much venture capital funding did Mistral AI raise in their Series B round in June 2024 according to Chapter 1?",
+        "answerable": False,
+        "expected_answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+        "gold": []
+    },
+    {
+        "id": "adv_dev_abs_03",
+        "split": "dev",
+        "main_group": "Thiếu bằng chứng",
+        "question": "What is the internal system prompt utilized by Microsoft Copilot for Microsoft Excel in 2025?",
+        "answerable": False,
+        "expected_answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+        "gold": []
+    },
+
+    # ========================== TEST SPLIT (30 questions) ==========================
+    # --- Test: Bảng (6) ---
+    {
+        "id": "adv_test_tab_01",
+        "split": "test",
+        "main_group": "Bảng",
+        "question": "According to Table 2-4 on page 88, what is the feedforward dimension of the Llama 3-70B model?",
+        "answerable": True,
+        "expected_answer": "According to Table 2-4, the feedforward dimension of Llama 3-70B is 28,672.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 88,
+                "evidence": "Llama 3-70B 80 8,192 28,672 128K 128K"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_tab_02",
+        "split": "test",
+        "main_group": "Bảng",
+        "question": "In Table 2-1 on page 76, what exact percentage of the Common Crawl corpus is represented by the Vietnamese language?",
+        "answerable": True,
+        "expected_answer": "Vietnamese accounts for 1.0299% of the Common Crawl corpus.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 76,
+                "evidence": "Vietnamese vi 85 1.0299 H"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_tab_03",
+        "split": "test",
+        "main_group": "Bảng",
+        "question": "According to Table 2-3 on page 81, what was Open CLIP ViT-B/32's accuracy on the Stanford Cars dataset?",
+        "answerable": True,
+        "expected_answer": "Open CLIP ViT-B/32 achieved 79.5% accuracy on the Stanford Cars dataset (compared to 59.4% for CLIP).",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 81,
+                "evidence": "Stanford Cars 59.4 79.5"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_tab_04",
+        "split": "test",
+        "main_group": "Bảng",
+        "question": "According to Table 2-4 on page 88, how many transformer blocks and what model dimension does Llama 3-405B have?",
+        "answerable": True,
+        "expected_answer": "Llama 3-405B has 126 transformer blocks and a model dimension of 16,384.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 88,
+                "evidence": "Llama 3-405B 126 16,384 53,248 128K 128K"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_tab_05",
+        "split": "test",
+        "main_group": "Bảng",
+        "question": "In Table 1-2 on page 41, which occupations were identified as having 0% exposure to AI?",
+        "answerable": True,
+        "expected_answer": "Cooks, stonemasons, and athletes were identified as having 0% exposure to AI.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 41,
+                "evidence": "occupations with no exposure to AI include cooks, stonemasons,\nand athletes"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_tab_06",
+        "split": "test",
+        "main_group": "Bảng",
+        "question": "According to Table 2-5 on page 94, how many training tokens were used to train the Chinchilla 70B parameter model?",
+        "answerable": True,
+        "expected_answer": "The Chinchilla 70 billion parameter model was trained on 1.4 trillion tokens.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 94,
+                "evidence": "Chinchilla 70 billion 1.4 trillion"
+            }
+        ]
+    },
+    # --- Test: Ảnh, Sơ đồ (5) ---
+    {
+        "id": "adv_test_fig_01",
+        "split": "test",
+        "main_group": "Ảnh, sơ đồ",
+        "question": "According to Figure 1-1 on page 27, into which two subword tokens is the contraction 'can\'t' separated by GPT-4?",
+        "answerable": True,
+        "expected_answer": "The contraction 'can\'t' is separated into 'can' and ''t'.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 27,
+                "evidence": "word “can’t” is broken"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_fig_02",
+        "split": "test",
+        "main_group": "Ảnh, sơ đồ",
+        "question": "In Figure 1-2 on page 29, what prediction direction is used by an autoregressive language model compared to a masked language model?",
+        "answerable": True,
+        "expected_answer": "An autoregressive model predicts the next token unidirectionally from left to right, whereas a masked language model predicts masked tokens bidirectionally from surrounding context.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 29,
+                "evidence": "Autoregressive language model and masked language model"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_fig_03",
+        "split": "test",
+        "main_group": "Ảnh, sơ đồ",
+        "question": "According to Figure 1-14 on page 62, what are the three architectural layers that make up the AI engineering stack?",
+        "answerable": True,
+        "expected_answer": "The three layers are Application development, Model development, and Infrastructure.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 62,
+                "evidence": "Three layers of the AI engineering stack"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_fig_04",
+        "split": "test",
+        "main_group": "Ảnh, sơ đồ",
+        "question": "In Chapter 2 under post-training (Figure 2-13 on page 110), what type of interface was provided to human labelers for OpenAI's InstructGPT?",
+        "answerable": True,
+        "expected_answer": "A comparison interface where labelers generate or evaluate comparison data by ranking multiple model responses for a given prompt.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 110,
+                "evidence": "The interface labelers used to generate comparison data for OpenAI’s\nInstructGPT"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_fig_05",
+        "split": "test",
+        "main_group": "Ảnh, sơ đồ",
+        "question": "In Figure 2-23 on page 130 illustrating model inconsistency, what two different scores did ChatGPT give to the exact same essay prompt when run twice?",
+        "answerable": True,
+        "expected_answer": "ChatGPT gave two completely different scores: 3/5 and 5/5.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 130,
+                "evidence": "The same\nprompt gave me two different scores when I ran it twice: 3/5 and 5/5"
+            }
+        ]
+    },
+    # --- Test: Biểu đồ (5) ---
+    {
+        "id": "adv_test_chart_01",
+        "split": "test",
+        "main_group": "Biểu đồ",
+        "question": "According to Figure 1-7 on page 43, which category represents the largest share of open-source generative AI use cases on GitHub, and at what percentage?",
+        "answerable": True,
+        "expected_answer": "Coding is the largest share at 28% of open source GitHub AI repositories.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 43,
+                "evidence": "Distribution of use cases in the 205 open source repositories on GitHub"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_chart_02",
+        "split": "test",
+        "main_group": "Biểu đồ",
+        "question": "According to Figure 1-5 on page 37, approximately how many S&P 500 companies mentioned AI in their earnings calls by early 2024?",
+        "answerable": True,
+        "expected_answer": "Nearly 200 S&P 500 companies (almost 40% of the index) mentioned AI in their earnings calls by early 2024.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 37,
+                "evidence": "Figure 1-5. The number of S&P 500 companies that mention AI in their earnings"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_chart_03",
+        "split": "test",
+        "main_group": "Biểu đồ",
+        "question": "In Figure 1-8 on page 43 based on the a16z report, why are companies significantly more willing to deploy internal-facing applications than external-facing applications?",
+        "answerable": True,
+        "expected_answer": "Companies deploy internal applications to develop AI expertise while minimizing risks associated with data privacy, compliance, and catastrophic failures.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 43,
+                "evidence": "Internal applications help com‐\npanies develop their AI engineering expertise while minimizing the risks associated\nwith data privacy, compliance, and potential catastrophic failures"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_chart_04",
+        "split": "test",
+        "main_group": "Biểu đồ",
+        "question": "According to Figure 1-9 on page 45, for what software engineering task did McKinsey find that AI can help developers be twice as productive (2x)?",
+        "answerable": True,
+        "expected_answer": "McKinsey found that AI can help developers be twice as productive for documentation.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 45,
+                "evidence": "AI can help developers be twice as productive for docu‐\nmentation"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_chart_05",
+        "split": "test",
+        "main_group": "Biểu đồ",
+        "question": "According to Figure 2-19 on page 122 regarding test-time compute, at what number of sampled candidate outputs did OpenAI's experiment observe peak performance before decreasing?",
+        "answerable": True,
+        "expected_answer": "In OpenAI's experiment, performance peaked at approximately 400 candidate outputs before decreasing.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 122,
+                "evidence": "In OpenAI’s experiment, sampling more outputs led to better performance, but only\nup to a certain point. In this experiment, that point was 400 outputs"
+            }
+        ]
+    },
+    # --- Test: Multi-hop (4) ---
+    {
+        "id": "adv_test_multi_01",
+        "split": "test",
+        "main_group": "Multi-hop",
+        "question": "Comparing the dimension specifications in Table 2-4 on page 88 with the vocabulary size discussion in Chapter 2, what is the vocabulary size of Llama 3 models compared to Llama 2 models?",
+        "answerable": True,
+        "expected_answer": "Llama 3 models have a vocabulary size of 128K (128,000 tokens), which is 4 times larger than Llama 2's vocabulary size of 32K (32,000 tokens).",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 88,
+                "evidence": "Llama 3-7B 32 4,096 14,336 128K 128K"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_multi_02",
+        "split": "test",
+        "main_group": "Multi-hop",
+        "question": "Cross-referencing the language distribution in Common Crawl (Table 2-1 on page 76) with English data prevalence, how does English representation compare to the next most common language, Russian?",
+        "answerable": True,
+        "expected_answer": "English accounts for 45.88% of Common Crawl, making it nearly eight times (7.7x) more prevalent than Russian at 5.97%.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 76,
+                "evidence": "English en 1,452 45.8786 H\nRussian ru 258 5.9692 H"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_multi_03",
+        "split": "test",
+        "main_group": "Multi-hop",
+        "question": "Considering the AI stack layers in Figure 1-14 on page 62 and prompt engineering discussion in Chapter 2, in which layer of the stack does prompt engineering belong?",
+        "answerable": True,
+        "expected_answer": "Prompt engineering belongs to the top Application Development layer of the AI engineering stack.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 62,
+                "evidence": "Three layers of the AI engineering stack"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_multi_04",
+        "split": "test",
+        "main_group": "Multi-hop",
+        "question": "Comparing the test-time compute sampling discussion (pages 120-122) and post-training best-of-N techniques (page 107), how does test time compute leverage multiple outputs for a single prompt?",
+        "answerable": True,
+        "expected_answer": "Instead of generating only one response per query, test time compute generates multiple candidate responses and uses a verifier or reward model to select the best output.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 120,
+                "evidence": "instead of\ngenerating only one response per query, you generate multiple responses to increase\nthe chance of good responses"
+            }
+        ]
+    },
+    # --- Test: Text (4) ---
+    {
+        "id": "adv_test_text_01",
+        "split": "test",
+        "main_group": "Text",
+        "question": "What supervision method did OpenAI utilize to train the CLIP language-image model without manual labeling?",
+        "answerable": True,
+        "expected_answer": "OpenAI used natural language supervision (a variant of self-supervision) using 400 million (image, text) pairs found on the internet.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 34,
+                "evidence": "OpenAI used a variant of selfsupervision called natural language supervision to train their language-image model\nCLIP"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_text_02",
+        "split": "test",
+        "main_group": "Text",
+        "question": "In Chapter 2 under post-training, how many volunteers did LAION mobilize to create conversational data?",
+        "answerable": True,
+        "expected_answer": "LAION mobilized 13,500 volunteers worldwide to create 10,000 conversations.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 107,
+                "evidence": "LAION mobilized 13,500 volunteers worldwide to create conversational data"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_text_03",
+        "split": "test",
+        "main_group": "Text",
+        "question": "Why is the number of tokens considered a superior metric for measuring dataset size compared to the number of books or sentences?",
+        "answerable": True,
+        "expected_answer": "Because a token is the fundamental unit that a model operates on, whereas books and sentences vary drastically in length.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 93,
+                "evidence": "Because a token is the unit that a model operates on"
+            }
+        ]
+    },
+    {
+        "id": "adv_test_text_04",
+        "split": "test",
+        "main_group": "Text",
+        "question": "What is the primary difference between self-supervised learning and unsupervised learning as clarified in Chapter 1?",
+        "answerable": True,
+        "expected_answer": "In self-supervised learning, labels are inferred directly from the input data itself, whereas in unsupervised learning you do not need labels at all.",
+        "gold": [
+            {
+                "source_id": "chip-huyen-ai-engineering-ch1-2",
+                "page": 32,
+                "evidence": "In self-supervised\nlearning, labels are inferred from the input data. In unsupervised\nlearning, you don’t need labels at all"
+            }
+        ]
+    },
+    # --- Test: Thiếu bằng chứng (6) ---
+    {
+        "id": "adv_test_abs_01",
+        "split": "test",
+        "main_group": "Thiếu bằng chứng",
+        "question": "What is the exact volume discount percentage offered by OpenAI for non-profit organizations using GPT-4 API in 2024?",
+        "answerable": False,
+        "expected_answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+        "gold": []
+    },
+    {
+        "id": "adv_test_abs_02",
+        "split": "test",
+        "main_group": "Thiếu bằng chứng",
+        "question": "According to Chapter 2, what is the exact hardware spec of Google TPU v5e pod operating at 197 TFLOPS per chip?",
+        "answerable": False,
+        "expected_answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+        "gold": []
+    },
+    {
+        "id": "adv_test_abs_03",
+        "split": "test",
+        "main_group": "Thiếu bằng chứng",
+        "question": "What is the quarterly revenue generated by Anthropic's Claude 3.5 Sonnet API in Q3 2024?",
+        "answerable": False,
+        "expected_answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+        "gold": []
+    },
+    {
+        "id": "adv_test_abs_04",
+        "split": "test",
+        "main_group": "Thiếu bằng chứng",
+        "question": "What is the internal floating-point weight matrix of Meta's Llama 3.1 405B query projection in layer 42?",
+        "answerable": False,
+        "expected_answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+        "gold": []
+    },
+    {
+        "id": "adv_test_abs_05",
+        "split": "test",
+        "main_group": "Thiếu bằng chứng",
+        "question": "How many water cooling chillers are physically installed at the data center housing the Frontier supercomputer mentioned in Chapter 2?",
+        "answerable": False,
+        "expected_answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+        "gold": []
+    },
+    {
+        "id": "adv_test_abs_06",
+        "split": "test",
+        "main_group": "Thiếu bằng chứng",
+        "question": "What is the exact salary range of senior AI engineers at Snowflake in 2025 as mentioned in Chapter 1?",
+        "answerable": False,
+        "expected_answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+        "gold": []
+    }
+]
+
+# Generate advanced cases
+cases = [
+    {
+        "id": q["id"],
+        "split": q["split"],
+        "answerable": q["answerable"],
+        "main_group": q["main_group"]
+    }
+    for q in benchmark_questions
+]
+
+# Save files
+bench_path = data_dir / "advanced_benchmark.json"
+cases_path = data_dir / "advanced_cases.json"
+
+with open(bench_path, "w", encoding="utf-8") as f:
+    json.dump(benchmark_questions, f, ensure_ascii=False, indent=2)
+
+with open(cases_path, "w", encoding="utf-8") as f:
+    json.dump(cases, f, ensure_ascii=False, indent=2)
+
+dev_count = sum(1 for q in benchmark_questions if q["split"] == "dev")
+test_count = sum(1 for q in benchmark_questions if q["split"] == "test")
+print(f"Created Advanced Benchmark:")
+print(f"- Total questions: {len(benchmark_questions)}")
+print(f"- Dev Split: {dev_count} questions ({sum(1 for q in benchmark_questions if q['split'] == 'dev' and q['answerable'])} answerable, {sum(1 for q in benchmark_questions if q['split'] == 'dev' and not q['answerable'])} abstain)")
+print(f"- Test Split: {test_count} questions ({sum(1 for q in benchmark_questions if q['split'] == 'test' and q['answerable'])} answerable, {sum(1 for q in benchmark_questions if q['split'] == 'test' and not q['answerable'])} abstain)")
+
+# Group breakdown for test
+test_groups = {}
+for q in benchmark_questions:
+    if q["split"] == "test":
+        g = q["main_group"]
+        test_groups[g] = test_groups.get(g, 0) + 1
+
+print("\nTest split group breakdown:")
+for g, cnt in test_groups.items():
+    print(f"  {g}: {cnt}")

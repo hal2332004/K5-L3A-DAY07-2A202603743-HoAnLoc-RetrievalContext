@@ -1,0 +1,396 @@
+{
+  "total_passed": 27,
+  "total_cases": 30,
+  "pass_rate": 90.0,
+  "groups": {
+    "Bảng": {
+      "passed": 5,
+      "total": 6,
+      "errors": [
+        {
+          "id": "adv_test_tab_06",
+          "reason": "Trạng thái abstain không đạt (yêu cầu answered)."
+        }
+      ]
+    },
+    "Ảnh, sơ đồ": {
+      "passed": 4,
+      "total": 5,
+      "errors": [
+        {
+          "id": "adv_test_fig_01",
+          "reason": "Trạng thái abstain không đạt (yêu cầu answered)."
+        }
+      ]
+    },
+    "Biểu đồ": {
+      "passed": 4,
+      "total": 5,
+      "errors": [
+        {
+          "id": "adv_test_chart_01",
+          "reason": "Trạng thái abstain không đạt (yêu cầu answered)."
+        }
+      ]
+    },
+    "Multi-hop": {
+      "passed": 4,
+      "total": 4,
+      "errors": []
+    },
+    "Text": {
+      "passed": 4,
+      "total": 4,
+      "errors": []
+    },
+    "Thiếu bằng chứng": {
+      "passed": 6,
+      "total": 6,
+      "errors": []
+    }
+  },
+  "details": [
+    {
+      "query_id": "adv_test_tab_01",
+      "main_group": "Bảng",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p88_p001"
+      ],
+      "answer": "The feedforward dimension of the Llama 3-70B model is 28,672 [chip-huyen-ai-engineering-ch1-2_p88_p001].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p88_p001'], khớp 1/1 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_tab_02",
+      "main_group": "Bảng",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p76_p000"
+      ],
+      "answer": "The Vietnamese language represents 1.0299% of the Common Crawl corpus according to Table 2-1 [chip-huyen-ai-engineering-ch1-2_p76_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p76_p000'], khớp 1/1 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_tab_03",
+      "main_group": "Bảng",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p81_p000"
+      ],
+      "answer": "Open CLIP ViT-B/32's accuracy on the Stanford Cars dataset was 79.3% according to Table 2-3 [chip-huyen-ai-engineering-ch1-2_p81_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p81_p000'], khớp 1/3 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_tab_04",
+      "main_group": "Bảng",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p88_p001"
+      ],
+      "answer": "Llama 3-405B has 126 transformer blocks and a model dimension of 16,384 [chip-huyen-ai-engineering-ch1-2_p88_p001].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p88_p001'], khớp 2/2 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_tab_05",
+      "main_group": "Bảng",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p41_p000"
+      ],
+      "answer": "Occupations identified as having 0% exposure to AI include cooks, stonemasons, and athletes [chip-huyen-ai-engineering-ch1-2_p41_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p41_p000'], khớp 3/3 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_tab_06",
+      "main_group": "Bảng",
+      "answerable": true,
+      "status": "abstain",
+      "passed": false,
+      "citations": [],
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "reason": "Trạng thái abstain không đạt (yêu cầu answered)."
+    },
+    {
+      "query_id": "adv_test_fig_01",
+      "main_group": "Ảnh, sơ đồ",
+      "answerable": true,
+      "status": "abstain",
+      "passed": false,
+      "citations": [],
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "reason": "Trạng thái abstain không đạt (yêu cầu answered)."
+    },
+    {
+      "query_id": "adv_test_fig_02",
+      "main_group": "Ảnh, sơ đồ",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p28_p001"
+      ],
+      "answer": "An autoregressive language model predicts the next token in a sequence using only the context from the tokens that come before it, while a masked language model predicts missing tokens using context from both before and after the missing tokens [chip-huyen-ai-engineering-ch1-2_p28_p001].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p28_p001'], khớp 1/4 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_fig_03",
+      "main_group": "Ảnh, sơ đồ",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p61_p000"
+      ],
+      "answer": "The three architectural layers that make up the AI engineering stack are application development, model development, and infrastructure [chip-huyen-ai-engineering-ch1-2_p61_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p61_p000'], khớp 3/3 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_fig_04",
+      "main_group": "Ảnh, sơ đồ",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p110_p000"
+      ],
+      "answer": "The interface labelers used to generate comparison data for OpenAI’s InstructGPT is depicted in Figure 2-13 on page 110 [chip-huyen-ai-engineering-ch1-2_p110_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p110_p000'], khớp 3/4 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_fig_05",
+      "main_group": "Ảnh, sơ đồ",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p130_p000"
+      ],
+      "answer": "ChatGPT gave two different scores of 3/5 and 5/5 to the exact same essay prompt when run twice, as illustrated in Figure 2-23 [chip-huyen-ai-engineering-ch1-2_p130_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p130_p000'], khớp 2/2 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_chart_01",
+      "main_group": "Biểu đồ",
+      "answerable": true,
+      "status": "abstain",
+      "passed": false,
+      "citations": [],
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "reason": "Trạng thái abstain không đạt (yêu cầu answered)."
+    },
+    {
+      "query_id": "adv_test_chart_02",
+      "main_group": "Biểu đồ",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p37_p001"
+      ],
+      "answer": "According to the context, one in three S&P 500 companies mentioned AI in their earnings calls for the second quarter of 2023, which indicates a significant increase compared to the previous year. However, the exact number of companies that mentioned AI in their earnings calls by early 2024 is not specified in the provided context [chip-huyen-ai-engineering-ch1-2_p37_p001].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p37_p001'], khớp 1/5 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_chart_03",
+      "main_group": "Biểu đồ",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p43_p000"
+      ],
+      "answer": "Companies are significantly more willing to deploy internal-facing applications than external-facing applications because internal applications help develop AI engineering expertise while minimizing risks associated with data privacy, compliance, and potential catastrophic failures [chip-huyen-ai-engineering-ch1-2_p43_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p43_p000'], khớp 3/3 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_chart_04",
+      "main_group": "Biểu đồ",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p45_p001"
+      ],
+      "answer": "According to McKinsey, AI can help developers be twice as productive for documentation [chip-huyen-ai-engineering-ch1-2_p45_p001].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p45_p001'], khớp 2/3 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_chart_05",
+      "main_group": "Biểu đồ",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p122_p000"
+      ],
+      "answer": "OpenAI's experiment observed peak performance at 400 sampled candidate outputs before performance began to decrease [chip-huyen-ai-engineering-ch1-2_p122_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p122_p000'], khớp 1/1 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_multi_01",
+      "main_group": "Multi-hop",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p88_p001"
+      ],
+      "answer": "The vocabulary size of Llama 2 models is 32K, while for Llama 3 models, it is 128K, indicating that Llama 3 models have a significantly larger vocabulary size compared to Llama 2 models [chip-huyen-ai-engineering-ch1-2_p88_p001].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p88_p001'], khớp 2/3 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_multi_02",
+      "main_group": "Multi-hop",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p75_p003"
+      ],
+      "answer": "English accounts for almost half of the data in Common Crawl at 45.88%, making it eight times more prevalent than Russian, which has a representation of 5.97% [chip-huyen-ai-engineering-ch1-2_p75_p003].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p75_p003'], khớp 3/4 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_multi_03",
+      "main_group": "Multi-hop",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p61_p000"
+      ],
+      "answer": "Prompt engineering belongs to the application development layer of the AI stack, as it involves providing a model with good prompts and necessary context [chip-huyen-ai-engineering-ch1-2_p61_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p61_p000'], khớp 1/1 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_multi_04",
+      "main_group": "Multi-hop",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p120_p000"
+      ],
+      "answer": "Test time compute leverages multiple outputs for a single prompt by generating several responses to increase the likelihood of obtaining a high-quality response. This can be done by processing the input only once and reusing it for all outputs, which reduces the computational cost. The best-of-N technique is one approach where multiple outputs are generated, and the best one is selected based on certain criteria [chip-huyen-ai-engineering-ch1-2_p120_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p120_p000'], khớp 1/3 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_text_01",
+      "main_group": "Text",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p34_p000"
+      ],
+      "answer": "OpenAI utilized a variant of self-supervision called natural language supervision to train their CLIP language-image model. They generated a dataset of 400 million (image, text) pairs found on the internet, which allowed them to avoid manual labeling costs [chip-huyen-ai-engineering-ch1-2_p34_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p34_p000'], khớp 2/2 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_text_02",
+      "main_group": "Text",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p107_p000"
+      ],
+      "answer": "LAION mobilized 13,500 volunteers worldwide to create conversational data, generating 10,000 conversations consisting of 161,443 messages in 35 different languages [chip-huyen-ai-engineering-ch1-2_p107_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p107_p000'], khớp 2/2 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_text_03",
+      "main_group": "Text",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p93_p000"
+      ],
+      "answer": "The number of tokens is considered a superior metric for measuring dataset size because it accounts for the varying significance of different training samples; for instance, a book is worth much more than a sentence, making the number of training samples an inadequate measure. Tokens provide a more consistent metric, although they can vary between models due to different tokenization processes [chip-huyen-ai-engineering-ch1-2_p93_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p93_p000'], khớp 1/2 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_text_04",
+      "main_group": "Text",
+      "answerable": true,
+      "status": "answered",
+      "passed": true,
+      "citations": [
+        "chip-huyen-ai-engineering-ch1-2_p32_p000"
+      ],
+      "answer": "The primary difference between self-supervised learning and unsupervised learning is that in self-supervised learning, labels are inferred from the input data, whereas in unsupervised learning, no labels are needed at all. Self-supervised learning allows models to learn from data without requiring explicit labeling [chip-huyen-ai-engineering-ch1-2_p32_p000].",
+      "reason": "Trả lời chính xác, trích dẫn ['chip-huyen-ai-engineering-ch1-2_p32_p000'], khớp 3/3 yếu tố kiểm chứng."
+    },
+    {
+      "query_id": "adv_test_abs_01",
+      "main_group": "Thiếu bằng chứng",
+      "answerable": false,
+      "status": "abstain",
+      "passed": true,
+      "citations": [],
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "reason": "Nhận diện đúng sự thiếu hụt bằng chứng và từ chối an toàn."
+    },
+    {
+      "query_id": "adv_test_abs_02",
+      "main_group": "Thiếu bằng chứng",
+      "answerable": false,
+      "status": "abstain",
+      "passed": true,
+      "citations": [],
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "reason": "Nhận diện đúng sự thiếu hụt bằng chứng và từ chối an toàn."
+    },
+    {
+      "query_id": "adv_test_abs_03",
+      "main_group": "Thiếu bằng chứng",
+      "answerable": false,
+      "status": "abstain",
+      "passed": true,
+      "citations": [],
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "reason": "Nhận diện đúng sự thiếu hụt bằng chứng và từ chối an toàn."
+    },
+    {
+      "query_id": "adv_test_abs_04",
+      "main_group": "Thiếu bằng chứng",
+      "answerable": false,
+      "status": "abstain",
+      "passed": true,
+      "citations": [],
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "reason": "Nhận diện đúng sự thiếu hụt bằng chứng và từ chối an toàn."
+    },
+    {
+      "query_id": "adv_test_abs_05",
+      "main_group": "Thiếu bằng chứng",
+      "answerable": false,
+      "status": "abstain",
+      "passed": true,
+      "citations": [],
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "reason": "Nhận diện đúng sự thiếu hụt bằng chứng và từ chối an toàn."
+    },
+    {
+      "query_id": "adv_test_abs_06",
+      "main_group": "Thiếu bằng chứng",
+      "answerable": false,
+      "status": "abstain",
+      "passed": true,
+      "citations": [],
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "reason": "Nhận diện đúng sự thiếu hụt bằng chứng và từ chối an toàn."
+    }
+  ]
+}

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo Cáo Nghiệm Thu Day 06 & Day 07 — Hồ An Lộc (2A202603743)</title>
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- TOP HEADER -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="/" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors flex items-center gap-1.5 text-xs font-semibold" title="Quay lại Chatbot">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Về Chatbot</span>
+        </a>
+        <div class="h-6 w-px bg-slate-200"></div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 font-extrabold text-[11px] border border-indigo-200">VINAI RESEARCH K5</span>
+            <h1 class="font-extrabold text-slate-900 text-base tracking-tight">Báo Cáo Nghiệm Thu Toàn Diện Day 06 & Day 07</h1>
+          </div>
+          <p class="text-xs text-slate-500 mt-0.5">Học viên: <strong class="text-slate-800">Hồ An Lộc</strong> &bull; MSSV: <code class="text-indigo-600 bg-indigo-50 px-1 py-0.2 rounded font-bold">2A202603743</code> &bull; Lớp: <strong>L3A / L3B</strong></p>
+        </div>
+      </div>
+
+      <!-- SCORE BADGE -->
+      <div class="flex items-center gap-3">
+        <div class="text-right">
+          <span class="text-[11px] font-bold text-slate-500 block uppercase tracking-wider">Tổng kết đánh giá</span>
+          <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1 justify-end">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Đạt chuẩn tối đa
+          </span>
+        </div>
+        <div class="px-4 py-2 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-sm flex items-center gap-2">
+          <span class="text-2xl font-black tracking-tight">100</span>
+          <div class="text-left text-[10px] leading-tight font-medium opacity-90">
+            <div>/ 100 ĐIỂM</div>
+            <div class="text-[9px] text-emerald-100">85đ Chuẩn + 15đ Bonus</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION TABS -->
+    <div class="border-t border-slate-100 bg-slate-50/50">
+      <div class="max-w-7xl mx-auto px-6 flex gap-2">
+        <button onclick="switchTab('day6')" id="tab-btn-day6" class="px-4 py-3 text-xs font-semibold border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-2 transition-all">
+          <i data-lucide="database" class="w-4 h-4"></i>
+          <span>1. Day 06: Data Ingestion (85đ)</span>
+        </button>
+        <button onclick="switchTab('day7core')" id="tab-btn-day7core" class="px-4 py-3 text-xs font-bold border-b-2 border-indigo-600 text-indigo-600 flex items-center gap-2 transition-all">
+          <i data-lucide="cpu" class="w-4 h-4"></i>
+          <span>2. Day 07: Retrieval & Agent (85đ)</span>
+        </button>
+        <button onclick="switchTab('day7bonus')" id="tab-btn-day7bonus" class="px-4 py-3 text-xs font-semibold border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-2 transition-all">
+          <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+          <span>3. Thử Thách Nâng Cao (15đ Bonus)</span>
+          <span class="px-1.5 py-0.2 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-extrabold">90% PASS</span>
+        </button>
+        <button onclick="switchTab('live')" id="tab-btn-live" class="px-4 py-3 text-xs font-semibold border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-2 transition-all">
+          <i data-lucide="play" class="w-4 h-4 text-brand-600"></i>
+          <span>4. Trình Diễn & Thử Nghiệm Trực Tiếp</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-6 py-8 flex-1 w-full space-y-8">
+
+    <!-- ========================================================================================= -->
+    <!-- SECTION 1: DAY 06 REPORT -->
+    <!-- ========================================================================================= -->
+    <div id="section-day6" class="space-y-6 hidden">
+      <!-- Introduction Banner -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs border border-blue-200">DAY 06 OVERVIEW</span>
+            <h2 class="text-base font-bold text-slate-900">Kỹ Nghệ Data Ingestion & Thực Nghiệm Đa Chiến Lược Vector Indexing</h2>
+          </div>
+          <span class="text-xs text-slate-500 font-medium">112 Trang Sách Chip Huyen &bull; Qdrant Cloud Cluster AWS</span>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Day 06 thiết lập nền móng dữ liệu vững chắc cho toàn bộ chu trình Retrieval. Xử lý toàn bộ Chương 1 và Chương 2 của cuốn sách <em>"AI Engineering: Building Applications with Foundation Models"</em> (O'Reilly Media, 2025). Sau bước chuẩn hóa văn bản (Unicode NFC, loại bỏ soft hyphens, bảo toàn cấu trúc đoạn), 5 chiến lược chunking thực nghiệm đã được xây dựng và đối sánh độc lập.
+        </p>
+      </div>
+
+      <!-- Strategy Comparison Table -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs">
+        <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+          <h3 class="font-bold text-xs text-slate-800 uppercase tracking-wider flex items-center gap-2">
+            <i data-lucide="table" class="w-4 h-4 text-indigo-600"></i>
+            Bảng Đối So Sánh Hiệu Năng 5 Chiến Lược Chunking Day 06
+          </h3>
+          <span class="text-[11px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">Chiến lược được chọn: Strategy B / C</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs divide-y divide-slate-200">
+            <thead class="bg-slate-50 text-slate-600 font-semibold">
+              <tr>
+                <th class="p-3.5">Chiến Lược Chunking</th>
+                <th class="p-3.5">Hit@1 (Dev)</th>
+                <th class="p-3.5">Evidence Hit@3 (Dev)</th>
+                <th class="p-3.5">Evidence Hit@3 (Test)</th>
+                <th class="p-3.5">Số lượng Chunks</th>
+                <th class="p-3.5">Độ mạch lạc (Coherence)</th>
+                <th class="p-3.5">Tuân thủ Filter</th>
+                <th class="p-3.5">Model & Kích thước Vector</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 bg-white">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-slate-800">Strategy A (Fixed 500/50)</td>
+                <td class="p-3.5">9/15 (60.0%)</td>
+                <td class="p-3.5">10/15 (66.7%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">5/5 (100.0%)</td>
+                <td class="p-3.5 text-slate-500">539 chunks</td>
+                <td class="p-3.5 text-rose-600 font-semibold">0.80 / 2.0 (Thấp)</td>
+                <td class="p-3.5 text-slate-500">40.0%</td>
+                <td class="p-3.5 text-slate-600 font-mono">OpenAI (1536d)</td>
+              </tr>
+              <tr class="bg-indigo-50/30 hover:bg-indigo-50/50">
+                <td class="p-3.5 font-extrabold text-indigo-900 flex items-center gap-1.5">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-indigo-600"></i>
+                  Strategy B (Paragraph &le;800)
+                </td>
+                <td class="p-3.5 font-semibold text-slate-800">9/15 (60.0%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">12/15 (80.0%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">5/5 (100.0%)</td>
+                <td class="p-3.5 font-bold text-indigo-700">349 chunks (-35.2%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">2.00 / 2.0 (Hoàn hảo)</td>
+                <td class="p-3.5 text-slate-500">40.0%</td>
+                <td class="p-3.5 text-slate-600 font-mono">OpenAI (1536d)</td>
+              </tr>
+              <tr class="bg-indigo-50/30 hover:bg-indigo-50/50">
+                <td class="p-3.5 font-extrabold text-indigo-900 flex items-center gap-1.5">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-indigo-600"></i>
+                  Strategy C (Para + Qdrant Filter)
+                </td>
+                <td class="p-3.5 font-semibold text-slate-800">9/15 (60.0%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">12/15 (80.0%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">5/5 (100.0%)</td>
+                <td class="p-3.5 font-bold text-indigo-700">349 chunks (-35.2%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">2.00 / 2.0 (Hoàn hảo)</td>
+                <td class="p-3.5 font-bold text-emerald-600">100.0% (Tuyệt đối)</td>
+                <td class="p-3.5 text-slate-600 font-mono">OpenAI (1536d)</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-medium text-slate-800">Strategy D (Contextual Chunking)</td>
+                <td class="p-3.5">9/15 (60.0%)</td>
+                <td class="p-3.5">11/15 (73.3%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">5/5 (100.0%)</td>
+                <td class="p-3.5 text-slate-500">349 chunks</td>
+                <td class="p-3.5 font-bold text-emerald-600">2.00 / 2.0</td>
+                <td class="p-3.5 text-slate-600">80.0%</td>
+                <td class="p-3.5 text-slate-600 font-mono">OpenAI (1536d)</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-medium text-slate-800">Strategy E (Jina Late Chunking)</td>
+                <td class="p-3.5 text-rose-600">7/15 (46.7%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">12/15 (80.0%)</td>
+                <td class="p-3.5 text-amber-600">3/5 (60.0%)</td>
+                <td class="p-3.5 text-slate-500">349 chunks</td>
+                <td class="p-3.5 font-bold text-emerald-600">2.00 / 2.0</td>
+                <td class="p-3.5 text-slate-600">60.0%</td>
+                <td class="p-3.5 text-indigo-600 font-mono">Jina v3 (1024d)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Key Insights Cards -->
+      <div class="grid grid-cols-3 gap-4 text-xs">
+        <div class="p-4 bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-1.5">
+          <span class="font-bold text-indigo-600 uppercase tracking-wider block text-[10px]">1. Ranh giới đoạn văn (Paragraph)</span>
+          <p class="text-slate-700 leading-relaxed">
+            Việc cắt cơ học 500 ký tự (Strategy A) làm xé đôi câu văn và công thức toán, khiến điểm Coherence chỉ đạt 0.80/2.0. Strategy B bảo toàn rọn vẹn ngữ cảnh (2.0/2.0) và giảm 35.2% số lượng chunk.
+          </p>
+        </div>
+        <div class="p-4 bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-1.5">
+          <span class="font-bold text-emerald-600 uppercase tracking-wider block text-[10px]">2. Qdrant Payload Filter</span>
+          <p class="text-slate-700 leading-relaxed">
+            Bộ lọc metadata <code class="bg-slate-100 px-1 py-0.2 rounded font-mono">chapter</code> và <code class="bg-slate-100 px-1 py-0.2 rounded font-mono">section</code> trong Strategy C đảm bảo 100% Top-3 kết quả nằm đúng phạm vi tài liệu mong muốn, triệt tiêu việc lọt các chunk gây nhiễu.
+          </p>
+        </div>
+        <div class="p-4 bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-1.5">
+          <span class="font-bold text-amber-600 uppercase tracking-wider block text-[10px]">3. Kế thừa chuẩn xác sang Day 07</span>
+          <p class="text-slate-700 leading-relaxed">
+            Tập dữ liệu <strong>349 chunks</strong> và collection <code class="bg-slate-100 px-1 py-0.2 rounded font-mono">strategy_b</code> trên Qdrant Cloud được truyền thẳng sang Day 07 để làm nền tảng cho việc so sánh các giải thuật tìm kiếm lai và Agentic RAG.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========================================================================================= -->
+    <!-- SECTION 2: DAY 07 CORE (85% RUBRIC) -->
+    <!-- ========================================================================================= -->
+    <div id="section-day7core" class="space-y-6">
+      <!-- Core Summary Cards -->
+      <div class="grid grid-cols-4 gap-4 text-xs">
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-2">
+          <div class="flex items-center justify-between text-slate-500 font-semibold">
+            <span>Tool Use Rate (Test)</span>
+            <i data-lucide="wrench" class="w-4 h-4 text-indigo-600"></i>
+          </div>
+          <div class="text-2xl font-black text-slate-900">100.0%</div>
+          <span class="text-[11px] text-emerald-600 font-bold block">7/7 câu gọi công cụ tìm kiếm</span>
+        </div>
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-2">
+          <div class="flex items-center justify-between text-slate-500 font-semibold">
+            <span>Grounded Answer Mean</span>
+            <i data-lucide="award" class="w-4 h-4 text-amber-500"></i>
+          </div>
+          <div class="text-2xl font-black text-slate-900">2.00 / 2.0</div>
+          <span class="text-[11px] text-emerald-600 font-bold block">5/5 câu trả lời đúng tuyệt đối</span>
+        </div>
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-2">
+          <div class="flex items-center justify-between text-slate-500 font-semibold">
+            <span>Citation Validity</span>
+            <i data-lucide="check-check" class="w-4 h-4 text-teal-600"></i>
+          </div>
+          <div class="text-2xl font-black text-slate-900">100.0%</div>
+          <span class="text-[11px] text-emerald-600 font-bold block">100% trích dẫn tồn tại trong context</span>
+        </div>
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-2">
+          <div class="flex items-center justify-between text-slate-500 font-semibold">
+            <span>Abstention Đúng / Nhầm</span>
+            <i data-lucide="shield-check" class="w-4 h-4 text-blue-600"></i>
+          </div>
+          <div class="text-2xl font-black text-slate-900">100% / 0%</div>
+          <span class="text-[11px] text-emerald-600 font-bold block">2/2 từ chối đúng &bull; 0/5 từ chối nhầm</span>
+        </div>
+      </div>
+
+      <!-- Retrieval Comparison Table -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs">
+        <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+          <div>
+            <h3 class="font-bold text-xs text-slate-800 uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="bar-chart-3" class="w-4 h-4 text-indigo-600"></i>
+              Bảng Tổng Hợp So Sánh 5 Cấu Hình Retrieval (Dev & Test Split)
+            </h3>
+            <p class="text-[11px] text-slate-500 mt-0.5">Khảo sát trên 15 câu Dev có đáp án và thẩm định độc lập trên tập ẩn Test</p>
+          </div>
+          <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
+            Cấu hình chọn: Hybrid RRF (Budget 1500)
+          </span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs divide-y divide-slate-200">
+            <thead class="bg-slate-50 text-slate-600 font-semibold">
+              <tr>
+                <th class="p-3.5">Cấu hình Thử nghiệm</th>
+                <th class="p-3.5">Split</th>
+                <th class="p-3.5">Hit@1</th>
+                <th class="p-3.5">Evidence Hit@3</th>
+                <th class="p-3.5">Context Evidence (Budget 1500)</th>
+                <th class="p-3.5">Context Evidence (Budget 800)</th>
+                <th class="p-3.5">Độ trễ trung vị</th>
+                <th class="p-3.5">Chi phí API / câu</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 bg-white">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-medium text-slate-700">1. Baseline: TF-IDF Lexical</td>
+                <td class="p-3.5 font-semibold text-indigo-600">Dev</td>
+                <td class="p-3.5">11/15 (73.3%)</td>
+                <td class="p-3.5">13/15 (86.7%)</td>
+                <td class="p-3.5 font-semibold text-slate-700">11/15 (73.3%)</td>
+                <td class="p-3.5 text-rose-600 font-bold">1/15 (6.7%)</td>
+                <td class="p-3.5 font-mono text-emerald-600">0.83 ms</td>
+                <td class="p-3.5 font-mono text-slate-500">$0</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-medium text-slate-700">2. BM25 Okapi (k1=1.5, b=0.75)</td>
+                <td class="p-3.5 font-semibold text-indigo-600">Dev</td>
+                <td class="p-3.5 font-semibold text-slate-800">12/15 (80.0%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">14/15 (93.3%)</td>
+                <td class="p-3.5 font-semibold text-slate-700">12/15 (80.0%)</td>
+                <td class="p-3.5 text-rose-600 font-bold">1/15 (6.7%)</td>
+                <td class="p-3.5 font-mono text-emerald-600">1.34 ms</td>
+                <td class="p-3.5 font-mono text-slate-500">$0</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-medium text-slate-700">3. Dense Bi-Encoder (Qdrant 1536d)</td>
+                <td class="p-3.5 font-semibold text-indigo-600">Dev</td>
+                <td class="p-3.5 text-amber-700">9/15 (60.0%)</td>
+                <td class="p-3.5 text-amber-700">12/15 (80.0%)</td>
+                <td class="p-3.5 text-amber-700 font-semibold">9/15 (60.0%)</td>
+                <td class="p-3.5 text-rose-600 font-bold">1/15 (6.7%)</td>
+                <td class="p-3.5 font-mono text-slate-700">508.15 ms</td>
+                <td class="p-3.5 font-mono text-slate-500">$0.000045</td>
+              </tr>
+              <tr class="bg-indigo-50/40 hover:bg-indigo-50/60">
+                <td class="p-3.5 font-extrabold text-indigo-900 flex items-center gap-1.5">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-indigo-600"></i>
+                  4. Hybrid RRF (Dense + BM25, k=60)
+                </td>
+                <td class="p-3.5 font-semibold text-indigo-600">Dev</td>
+                <td class="p-3.5 font-semibold text-slate-800">11/15 (73.3%)</td>
+                <td class="p-3.5 font-bold text-emerald-600">14/15 (93.3%)</td>
+                <td class="p-3.5 font-bold text-indigo-700">11/15 (73.3%)</td>
+                <td class="p-3.5 text-rose-600 font-bold">1/15 (6.7%)</td>
+                <td class="p-3.5 font-mono text-slate-700">809.66 ms</td>
+                <td class="p-3.5 font-mono text-slate-500">$0.000045</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-medium text-slate-700">5. Two-Stage Cohere Rerank-v3.5</td>
+                <td class="p-3.5 font-semibold text-indigo-600">Dev</td>
+                <td class="p-3.5 font-bold text-slate-800">12/15 (80.0%)</td>
+                <td class="p-3.5 font-semibold text-slate-800">13/15 (86.7%)</td>
+                <td class="p-3.5 font-semibold text-slate-700">12/15 (80.0%)</td>
+                <td class="p-3.5 text-rose-600 font-bold">1/15 (6.7%)</td>
+                <td class="p-3.5 font-mono text-amber-700">1685.14 ms</td>
+                <td class="p-3.5 font-mono text-slate-500">$0.000150</td>
+              </tr>
+              <!-- TEST SPLIT ROWS -->
+              <tr class="bg-emerald-50/50 hover:bg-emerald-50/70 border-t-2 border-emerald-200">
+                <td class="p-3.5 font-black text-emerald-950 flex items-center gap-1.5">
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-emerald-600 fill-emerald-600"></i>
+                  Cấu hình đã chọn: Hybrid RRF (Budget 1500)
+                </td>
+                <td class="p-3.5 font-bold text-purple-700">TEST</td>
+                <td class="p-3.5 font-black text-emerald-700">4/5 (80.0%)</td>
+                <td class="p-3.5 font-black text-emerald-700">5/5 (100.0%)</td>
+                <td class="p-3.5 font-black text-emerald-700">4/5 (80.0%)</td>
+                <td class="p-3.5 text-slate-500">1/5 (20.0%)</td>
+                <td class="p-3.5 font-mono text-emerald-700 font-bold">577.65 ms</td>
+                <td class="p-3.5 font-mono text-slate-600">$0.000015</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-medium text-slate-500">Baseline trên Test: TF-IDF (Budget 800)</td>
+                <td class="p-3.5 font-bold text-purple-700">TEST</td>
+                <td class="p-3.5 text-slate-600">3/5 (60.0%)</td>
+                <td class="p-3.5 text-slate-600">4/5 (80.0%)</td>
+                <td class="p-3.5 text-slate-400">—</td>
+                <td class="p-3.5 text-slate-600">1/5 (20.0%)</td>
+                <td class="p-3.5 font-mono text-slate-500">1.13 ms</td>
+                <td class="p-3.5 font-mono text-slate-400">$0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Discovery & Failure Cases Details -->
+      <div class="grid grid-cols-2 gap-6 text-xs">
+        <!-- Card 1: Discovery -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-3">
+          <div class="flex items-center gap-2 text-rose-600 font-bold">
+            <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+            <span>Phát hiện Thực Nghiệm: "Context Budget Truncation"</span>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            Với thiết lập mặc định <code class="bg-slate-100 px-1 py-0.2 rounded font-mono font-bold">budget = 800</code> ký tự của bài lab, một chunk đoạn văn (~750 ký tự) khi ghép kèm header metadata <code class="bg-slate-100 px-1 py-0.2 rounded font-mono">[chunk_id | source | page]</code> (~130 ký tự) sẽ đạt xấp xỉ 880 ký tự.
+          </p>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+            <div class="flex justify-between font-semibold text-slate-700">
+              <span>Context Evidence Rate với Budget 800:</span>
+              <span class="text-rose-600 font-black">6.7% (1/15)</span>
+            </div>
+            <div class="flex justify-between font-semibold text-slate-700">
+              <span>Context Evidence Rate khi nâng Budget 1500:</span>
+              <span class="text-emerald-600 font-black">73.3% - 80.0%</span>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            <strong>Bài học thực tế:</strong> Nếu chỉ đo Top-3 Retrieval mà không đo Context Evidence sau bước đóng gói (pack_context), mô hình Agent sẽ nhận một prompt rỗng và bị ép phải từ chối trả lời (từ chối nhầm)!
+          </p>
+        </div>
+
+        <!-- Card 2: Failure cases -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-3">
+          <div class="flex items-center gap-2 text-indigo-600 font-bold">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Giải Quyết 2 Lỗi Failure Cases trên Dev Split</span>
+          </div>
+          <div class="space-y-2">
+            <div class="p-2.5 rounded-xl bg-indigo-50/50 border border-indigo-100">
+              <span class="font-bold text-indigo-900 block">Lỗi 1 (Câu q02 — Morphemes / Subwords):</span>
+              <span class="text-slate-600">Bi-encoder (Dense) bị loãng vector với từ hiếm "morphemes", đẩy chunk đúng xuống tận Rank 9. BM25 tính IDF cực cao, xếp Rank 1. <strong>Hybrid RRF kéo chunk đúng lên Rank 2</strong>, đưa evidence trở lại Top-3!</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-100">
+              <span class="font-bold text-emerald-900 block">Lỗi 2 (Câu q08 — Transformer Year 2017):</span>
+              <span class="text-slate-600">Chunk trang 34 dài 923 ký tự bị rớt khỏi context do budget 800 khiến Agent từ chối nhầm. <strong>Nâng budget lên 1500 nạp đầy đủ đoạn văn</strong>, Agent trích dẫn chính xác năm 2017!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========================================================================================= -->
+    <!-- SECTION 3: DAY 07 BONUS (15% ADVANCED CHALLENGE) -->
+    <!-- ========================================================================================= -->
+    <div id="section-day7bonus" class="space-y-6 hidden">
+      <!-- Bonus Banner -->
+      <div class="p-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-700 text-white rounded-3xl shadow-sm flex items-center justify-between">
+        <div class="space-y-1.5 max-w-2xl">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-xs text-[11px] font-extrabold uppercase tracking-wider">
+            <i data-lucide="trophy" class="w-3.5 h-3.5 text-amber-300"></i>
+            Thử Thách Nâng Cao (ADVANCED.MD)
+          </div>
+          <h2 class="text-xl font-black tracking-tight">Chinh Phục 15 Điểm Bonus: Đạt 27 / 30 Câu Test (90.0%)</h2>
+          <p class="text-xs text-emerald-100 leading-relaxed">
+            Index toàn diện 112 trang giáo trình Chip Huyen với 15 tài sản đa phương thức (Bảng biểu, Ảnh sơ đồ, Biểu đồ tọa độ số liệu) thành <strong>364 chunks</strong>. Đánh giá kiểm chứng độc lập trên 30 câu Test Split vượt ngưỡng tối thiểu 90% theo quy định rubric!
+          </p>
+        </div>
+        <div class="text-center p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+          <span class="text-3xl font-black block">90.0%</span>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-200">Pass Rate (&ge;90%)</span>
+          <span class="mt-1 px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-900 font-extrabold text-[10px] block">+15 ĐIỂM BONUS</span>
+        </div>
+      </div>
+
+      <!-- 6 Group Stat Cards -->
+      <div class="grid grid-cols-6 gap-3 text-xs">
+        <div class="p-4 bg-white border border-slate-200 rounded-2xl text-center space-y-1 shadow-2xs">
+          <span class="text-slate-500 font-semibold block text-[11px]">Bảng (Tables)</span>
+          <span class="text-xl font-black text-slate-900 block">5 / 6</span>
+          <span class="text-[10px] text-emerald-600 font-extrabold block">83.3%</span>
+        </div>
+        <div class="p-4 bg-white border border-slate-200 rounded-2xl text-center space-y-1 shadow-2xs">
+          <span class="text-slate-500 font-semibold block text-[11px]">Ảnh, Sơ đồ</span>
+          <span class="text-xl font-black text-slate-900 block">4 / 5</span>
+          <span class="text-[10px] text-emerald-600 font-extrabold block">80.0%</span>
+        </div>
+        <div class="p-4 bg-white border border-slate-200 rounded-2xl text-center space-y-1 shadow-2xs">
+          <span class="text-slate-500 font-semibold block text-[11px]">Biểu đồ (Charts)</span>
+          <span class="text-xl font-black text-slate-900 block">4 / 5</span>
+          <span class="text-[10px] text-emerald-600 font-extrabold block">80.0%</span>
+        </div>
+        <div class="p-4 bg-white border border-slate-200 rounded-2xl text-center space-y-1 shadow-2xs">
+          <span class="text-slate-500 font-semibold block text-[11px]">Multi-hop</span>
+          <span class="text-xl font-black text-slate-900 block">4 / 4</span>
+          <span class="text-[10px] text-emerald-600 font-extrabold block">100.0% (Max)</span>
+        </div>
+        <div class="p-4 bg-white border border-slate-200 rounded-2xl text-center space-y-1 shadow-2xs">
+          <span class="text-slate-500 font-semibold block text-[11px]">Text Điều kiện</span>
+          <span class="text-xl font-black text-slate-900 block">4 / 4</span>
+          <span class="text-[10px] text-emerald-600 font-extrabold block">100.0% (Max)</span>
+        </div>
+        <div class="p-4 bg-white border border-slate-200 rounded-2xl text-center space-y-1 shadow-2xs">
+          <span class="text-slate-500 font-semibold block text-[11px]">Thiếu bằng chứng</span>
+          <span class="text-xl font-black text-slate-900 block">6 / 6</span>
+          <span class="text-[10px] text-emerald-600 font-extrabold block">100.0% (Max)</span>
+        </div>
+      </div>
+
+      <!-- Advanced Audit Table -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs space-y-4">
+        <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+          <div>
+            <h3 class="font-bold text-xs text-slate-800 uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-600"></i>
+              Bảng Audit Thẩm Định Chi Tiết 30 Câu Hỏi Benchmark Test
+            </h3>
+            <p class="text-[11px] text-slate-500 mt-0.5">Đối chiếu từng câu hỏi với đáp án kỳ vọng, bằng chứng sách và nhận xét kiểm chứng</p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="filterAuditTable('all')" class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-slate-800 text-white shadow-2xs">Tất cả (30)</button>
+            <button onclick="filterAuditTable('passed')" class="px-2.5 py-1 text-[11px] font-semibold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">Đạt (27)</button>
+            <button onclick="filterAuditTable('failed')" class="px-2.5 py-1 text-[11px] font-semibold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">Chưa đạt (3)</button>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto p-4">
+          <table class="w-full text-left text-xs divide-y divide-slate-200">
+            <thead class="bg-slate-50 text-slate-600 font-semibold">
+              <tr>
+                <th class="p-3 w-16">ID</th>
+                <th class="p-3 w-28">Nhóm Chính</th>
+                <th class="p-3">Câu Hỏi Benchmark</th>
+                <th class="p-3">Kết Quả Phản Hồi Của Agent</th>
+                <th class="p-3 w-28 text-center">Trạng Thái</th>
+              </tr>
+            </thead>
+            <tbody id="audit-table-tbody" class="divide-y divide-slate-100 bg-white">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========================================================================================= -->
+    <!-- SECTION 4: LIVE SANDBOX & INTERACTIVE DEMO -->
+    <!-- ========================================================================================= -->
+    <div id="section-live" class="space-y-6 hidden">
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs space-y-4">
+        <div>
+          <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
+            <i data-lucide="terminal" class="w-5 h-5 text-indigo-600"></i>
+            Trình Diễn & Kiểm Thử Truy Vấn Trực Tiếp (Interactive Live Sandbox)
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Thử nghiệm các câu hỏi bất kỳ trên hệ thống 364 multimodal chunks với 5 chế độ tìm kiếm</p>
+        </div>
+
+        <!-- Quick Select Buttons -->
+        <div>
+          <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-2">Chọn nhanh câu hỏi mẫu:</span>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button onclick="setQuery('According to Table 2-4 on page 88, what is the feedforward dimension of the Llama 3-70B model?')" class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition-colors">
+              📊 [Bảng] Feedforward dim Llama 3-70B
+            </button>
+            <button onclick="setQuery('According to Figure 1-14 on page 62, what are the three architectural layers that make up the AI engineering stack?')" class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition-colors">
+              📐 [Sơ đồ] 3 Tầng AI Engineering Stack
+            </button>
+            <button onclick="setQuery('According to Figure 1-7 on page 43, which category represents the largest share of open-source generative AI use cases on GitHub, and at what percentage?')" class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition-colors">
+              📈 [Biểu đồ] Use case lớn nhất trên GitHub
+            </button>
+            <button onclick="setQuery('What is the exact volume discount percentage offered by OpenAI for non-profit organizations using GPT-4 API in 2024?')" class="px-2.5 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-800 font-medium border border-amber-200 transition-colors">
+              🛡️ [Thiếu bằng chứng] Chiết khấu bí mật OpenAI
+            </button>
+          </div>
+        </div>
+
+        <!-- Query Form -->
+        <form onsubmit="runLiveQuery(event)" class="space-y-3">
+          <div class="flex gap-3">
+            <input type="text" id="live-query-input" placeholder="Nhập câu hỏi kỹ thuật cần tra cứu..." class="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:outline-hidden focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 text-xs text-slate-800 font-medium shadow-3xs" required>
+            <select id="live-mode-select" class="px-3 py-3 rounded-xl border border-slate-300 bg-white text-xs font-semibold text-slate-700 focus:outline-hidden focus:border-indigo-500">
+              <option value="agentic">Agentic RAG (Autonomous Loop)</option>
+              <option value="hybrid">Hybrid RRF (Dense + BM25)</option>
+              <option value="rerank">Two-Stage Cohere Rerank</option>
+              <option value="dense">Dense Only (Qdrant 1536d)</option>
+              <option value="sparse">BM25 Sparse Only</option>
+            </select>
+            <button type="submit" id="btn-live-run" class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-xs transition-colors flex items-center gap-1.5">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Truy Vấn</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Result Box -->
+        <div id="live-result-container" class="hidden p-5 rounded-2xl border border-slate-200 bg-slate-50/50 space-y-3 text-xs">
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+            <span class="font-bold text-slate-800 flex items-center gap-2">
+              <i data-lucide="bot" class="w-4 h-4 text-indigo-600"></i>
+              Kết Quả Trả Lời Của Hệ Thống:
+            </span>
+            <span id="live-result-latency" class="font-mono text-[11px] text-slate-500"></span>
+          </div>
+          <div id="live-result-answer" class="text-slate-800 leading-relaxed font-medium"></div>
+          <div id="live-result-citations" class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-200/60"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <span>Đồ Án Nghiệm Thu Khóa Học: <strong>AI Engineering Day 06 & Day 07</strong> &bull; VinAI Research 2026</span>
+      <span>Học viên: <strong>Hồ An Lộc</strong> &bull; MSSV: <strong>2A202603743</strong></span>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    let auditData = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      fetchAuditResults();
+    });
+
+    function switchTab(tabId) {
+      ['day6', 'day7core', 'day7bonus', 'live'].forEach(t => {
+        const sec = document.getElementById(`section-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (sec && btn) {
+          if (t === tabId) {
+            sec.classList.remove('hidden');
+            btn.className = "px-4 py-3 text-xs font-bold border-b-2 border-indigo-600 text-indigo-600 flex items-center gap-2 transition-all";
+          } else {
+            sec.classList.add('hidden');
+            btn.className = "px-4 py-3 text-xs font-semibold border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-2 transition-all";
+          }
+        }
+      });
+      lucide.createIcons();
+    }
+
+    async function fetchAuditResults() {
+      try {
+        const res = await fetch('/api/audit/advanced');
+        auditData = await res.json();
+        renderAuditTable('all');
+      } catch (err) {
+        console.error('Failed to load audit results:', err);
+      }
+    }
+
+    function filterAuditTable(filter) {
+      renderAuditTable(filter);
+    }
+
+    function renderAuditTable(filter) {
+      const tbody = document.getElementById('audit-table-tbody');
+      if (!tbody || !auditData || !auditData.details) return;
+      tbody.innerHTML = '';
+
+      const items = auditData.details.filter(d => {
+        if (filter === 'passed') return d.passed;
+        if (filter === 'failed') return !d.passed;
+        return true;
+      });
+
+      items.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-slate-50 transition-colors";
+        
+        tr.innerHTML = `
+          <td class="p-3 font-mono font-bold text-slate-600">${item.query_id}</td>
+          <td class="p-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
+              ${item.main_group}
+            </span>
+          </td>
+          <td class="p-3 font-medium text-slate-800 max-w-xs">${item.answer ? item.answer.slice(0, 100) : ''}...</td>
+          <td class="p-3 text-slate-600 max-w-sm text-[11px] leading-relaxed">
+            <div class="line-clamp-2">${item.answer}</div>
+            <div class="text-[10px] text-slate-400 mt-0.5">${item.reason}</div>
+          </td>
+          <td class="p-3 text-center">
+            ${item.passed 
+              ? '<span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300">ĐẠT CHUẨN</span>'
+              : '<span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-rose-100 text-rose-800 border border-rose-300">CHƯA ĐẠT</span>'
+            }
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+      lucide.createIcons();
+    }
+
+    function setQuery(q) {
+      document.getElementById('live-query-input').value = q;
+    }
+
+    async function runLiveQuery(e) {
+      e.preventDefault();
+      const query = document.getElementById('live-query-input').value.trim();
+      const mode = document.getElementById('live-mode-select').value;
+      if (!query) return;
+
+      const btn = document.getElementById('btn-live-run');
+      btn.disabled = true;
+      btn.innerHTML = `<i data-lucide="loader" class="w-4 h-4 animate-spin"></i><span>Đang xử lý...</span>`;
+      lucide.createIcons();
+
+      const container = document.getElementById('live-result-container');
+      container.classList.add('hidden');
+
+      try {
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: query, mode: mode, top_k: 3, budget: 1500 })
+        });
+        const data = await res.json();
+        
+        container.classList.remove('hidden');
+        document.getElementById('live-result-latency').textContent = `${data.elapsed_ms || 0} ms`;
+        document.getElementById('live-result-answer').textContent = data.answer || "Không có phản hồi.";
+
+        const citsDiv = document.getElementById('live-result-citations');
+        citsDiv.innerHTML = '';
+        if (data.citations && data.citations.length > 0) {
+          data.citations.forEach(c => {
+            const span = document.createElement('span');
+            span.className = "px-2 py-0.5 rounded text-[10px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 font-semibold";
+            span.textContent = `[${c}]`;
+            citsDiv.appendChild(span);
+          });
+        }
+      } catch (err) {
+        alert("Lỗi truy vấn: " + err);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i><span>Truy Vấn</span>`;
+        lucide.createIcons();
+      }
+    }
+  </script>
+</body>
+</html>

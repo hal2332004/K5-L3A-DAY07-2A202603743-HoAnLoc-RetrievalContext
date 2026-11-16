@@ -1,0 +1,744 @@
+[
+  {
+    "query_id": "q16",
+    "split": "test",
+    "question": "What supervision method did OpenAI utilize to train the CLIP language-image model without manual labeling?",
+    "answerable": true,
+    "status": "answered",
+    "answer": "OpenAI utilized a variant of self-supervision called natural language supervision to train their CLIP language-image model. They generated a dataset of 400 million (image, text) pairs found on the internet, which allowed them to avoid manual labeling costs [chip-huyen-ai-engineering-ch1-2_p34_p000].",
+    "citations": [
+      "chip-huyen-ai-engineering-ch1-2_p34_p000"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "OpenAI CLIP language-image model training supervision method without manual labeling",
+        "filter": null,
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p34_p000",
+            "text": "Just like language models, multimodal models need data to scale up. Self-supervision\nworks for multimodal models too. For example, OpenAI used a variant of selfsupervision called natural language supervision to train their language-image model\nCLIP (OpenAI, 2021) . Instead of manually generating labels for each image, they\nfound (image, text) pairs that co-occurred on the internet. They were able to generate\na dataset of 400 million (image, text) pairs, which was 400 times larger than ImageNet, without manual labeling cost. This dataset enabled CLIP to become the first\nmodel that could generalize to multiple image classification tasks without requiring\nadditional training. This book uses the term foundation models to refer to both large\nlanguage models and large multimodal models.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 34,
+            "metadata": {
+              "chapter": 1,
+              "section": "the_rise_of_ai_engineering",
+              "char_length": 791
+            },
+            "score": 0.01639344262295082,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 1,
+            "sparse_rank": 1
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p30_p002",
+            "text": "Supervision refers to the process of training ML\nalgorithms using labeled data, which can be expensive and slow to obtain. Selfsupervision helps overcome this data labeling bottleneck to create larger datasets for\nmodels to learn from, effectively allowing models to scale up. Here’s how. With supervision, you label examples to show the behaviors you want the model to\nlearn, and then train the model on these examples. Once trained, the model can be\napplied to new data. For example, to train a fraud detection model, you use examples\nof transactions, each labeled with “fraud” or “not fraud”. Once the model learns from\nthese examples, you can use this model to predict whether a transaction is fraudulent. The success of AI models in the 2010s lay in supervision.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 30,
+            "metadata": {
+              "chapter": 1,
+              "section": "the_rise_of_ai_engineering",
+              "char_length": 767
+            },
+            "score": 0.015640273704789834,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 2,
+            "sparse_rank": 6
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p32_p000",
+            "text": "7 In school, I was taught that model parameters include both model weights and model biases. However, today,\nwe generally use model weights to refer to all parameters. 8 It seems counterintuitive that larger models require more training data. If a model is more powerful,\nshouldn’t it require fewer examples to learn from? However, we’re not trying to get a large model to match\nthe performance of a small model using the same data. We’re trying to maximize model performance. Self-supervision differs from unsupervision. In self-supervised\nlearning, labels are inferred from the input data. In unsupervised\nlearning, you don’t need labels at all. Self-supervised learning means that language models can learn from text sequences\nwithout requiring any labeling.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 1,
+              "section": "the_rise_of_ai_engineering",
+              "char_length": 761
+            },
+            "score": 0.015504807692307693,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 5,
+            "sparse_rank": 4
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p34_p000 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 34]\nJust like language models, multimodal models need data to scale up. Self-supervision\nworks for multimodal models too. For example, OpenAI used a variant of selfsupervision called natural language supervision to train their language-image model\nCLIP (OpenAI, 2021) . Instead of manually generating labels for each image, they\nfound (image, text) pairs that co-occurred on the internet. They were able to generate\na dataset of 400 million (image, text) pairs, which was 400 times larger than ImageNet, without manual labeling cost. This dataset enabled CLIP to become the first\nmodel that could generalize to multiple image classification tasks without requiring\nadditional training. This book uses the term foundation models to refer to both large\nlanguage models and large multimodal models.",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p34_p000"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_ms": 14925.84
+  },
+  {
+    "query_id": "q17",
+    "split": "test",
+    "question": "Which generative AI application is consistently reported as the most popular in industry surveys?",
+    "answerable": true,
+    "status": "answered",
+    "answer": "In multiple generative AI surveys, coding is consistently reported as the most popular use case [chip-huyen-ai-engineering-ch1-2_p44_p000].",
+    "citations": [
+      "chip-huyen-ai-engineering-ch1-2_p44_p000"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "most popular generative AI application in industry surveys",
+        "filter": null,
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p44_p000",
+            "text": "Even after seeing hundreds of AI applications, I still find new applications that surprise me every week. In the early days of the internet, few people foresaw that the\ndominating use case on the internet one day would be social media. As we learn to\nmake the most out of AI, the use case that will eventually dominate might surprise us. With luck, the surprise will be a good one. Coding\nIn multiple generative AI surveys, coding is hands down the most popular use case. AI coding tools are popular both because AI is good at coding and because early AI\nengineers are coders who are more exposed to coding challenges.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 44,
+            "metadata": {
+              "chapter": 1,
+              "section": "foundation_model_use_cases",
+              "char_length": 618
+            },
+            "score": 0.01639344262295082,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 1,
+            "sparse_rank": 1
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p40_p001",
+            "text": "The number of potential applications that you could build with foundation models\nseems endless. Whatever use case you think of, there’s probably an AI for that. 10 It’s\nimpossible to list all potential use cases for AI. Even attempting to categorize these use cases is challenging, as different surveys use\ndifferent categorizations. For example, Amazon Web Services (AWS) has categorized\nenterprise generative AI use cases into three buckets: customer experience, employee\nproductivity, and process optimization. A 2024 O’Reilly survey categorized the use\ncases into eight categories: programming, data analysis, customer support, marketing\ncopy, other copy, research, web design, and art.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 40,
+            "metadata": {
+              "chapter": 1,
+              "section": "foundation_model_use_cases",
+              "char_length": 690
+            },
+            "score": 0.015504807692307693,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 5,
+            "sparse_rank": 4
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p40_p000",
+            "text": "10 Fun fact: as of September 16, 2024, the website theresanaiforthat.com lists 16,814 AIs for 14,688 tasks and\n4,803 jobs. The rapidly expanding community of AI engineers has demonstrated remarkable\ncreativity with an incredible range of exciting applications. The next section will\nexplore some of the most common application patterns. Foundation Model Use Cases\nIf you’re not already building AI applications, I hope the previous section has convinced you that now is a great time to do so. If you have an application in mind, you\nmight want to jump to “Planning AI Applications” on page 28. If you’re looking for\ninspiration, this section covers a wide range of industry-proven and promising use\ncases.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 40,
+            "metadata": {
+              "chapter": 1,
+              "section": "foundation_model_use_cases",
+              "char_length": 705
+            },
+            "score": 0.0152073732718894,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 10,
+            "sparse_rank": 2
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p44_p000 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 44]\nEven after seeing hundreds of AI applications, I still find new applications that surprise me every week. In the early days of the internet, few people foresaw that the\ndominating use case on the internet one day would be social media. As we learn to\nmake the most out of AI, the use case that will eventually dominate might surprise us. With luck, the surprise will be a good one. Coding\nIn multiple generative AI surveys, coding is hands down the most popular use case. AI coding tools are popular both because AI is good at coding and because early AI\nengineers are coders who are more exposed to coding challenges.",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p44_p000"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_ms": 6362.72
+  },
+  {
+    "query_id": "q18",
+    "split": "test",
+    "question": "In Chapter 2 on training data, what percentage of the Common Crawl corpus is in English?",
+    "answerable": true,
+    "status": "answered",
+    "answer": "English accounts for almost half of the data in the Common Crawl corpus, specifically 45.88% [chip-huyen-ai-engineering-ch1-2_p75_p003].",
+    "citations": [
+      "chip-huyen-ai-engineering-ch1-2_p75_p003"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "percentage of the Common Crawl corpus that is in English",
+        "filter": {
+          "chapter": 2,
+          "section": "training_data"
+        },
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p75_p003",
+            "text": "An analysis of the Common Crawl dataset shows that\nEnglish accounts for almost half of the data (45.88%), making it eight times more\nprevalent than the second-most common language, Russian (5.97%) (Lai et al., 2023). See Table 2-1 for a list of languages with at least 1% in Common Crawl. Languages\nwith limited availability as training data—typically languages not included in this list\n—are considered low-resource. Training Data | 51",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 75,
+            "metadata": {
+              "chapter": 2,
+              "section": "training_data",
+              "char_length": 436
+            },
+            "score": 0.01626123744050767,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 1,
+            "sparse_rank": 2
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p74_p003",
+            "text": "In 2022 and\n2023, this organization crawled approximately 2–3 billion web pages each month. Google provides a clean subset of Common Crawl called the Colossal Clean Crawled\nCorpus, or C4 for short. The data quality of Common Crawl, and C4 to a certain extent, is questionablethink clickbait, misinformation, propaganda, conspiracy theories, racism, misogyny,\nand every sketchy website you’ve ever seen or avoided on the internet. A study by the\nWashington Post shows that the 1,000 most common websites in the dataset include\nseveral media outlets that rank low on NewsGuard’s scale for trustworthiness . In lay\nterms, Common Crawl contains plenty of fake news. 50 | Chapter 2: Understanding Foundation Models",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 74,
+            "metadata": {
+              "chapter": 2,
+              "section": "training_data",
+              "char_length": 709
+            },
+            "score": 0.016009221311475412,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 4,
+            "sparse_rank": 1
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p76_p001",
+            "text": "Examples of under-represented languages in Common Crawl. The last row,\nEnglish, is for comparison. The numbers for % in Common Crawl are taken from Lai et al. (2023). Language Speakers (million) % world populationa % in Common Crawl World: Common Crawl Ratio\nPunjabi 113 1.41% 0.0061% 231.56\nSwahili 71 0.89% 0.0077% 115.26\nUrdu 231 2.89% 0.0274% 105.38\nKannada 64 0.80% 0.0122% 65.57\nTelugu 95 1.19% 0.0183% 64.89\nGujarati 62 0.78% 0.0126% 61.51\nMarathi 99 1.24% 0.0213% 58.10\nBengali 272 3.40% 0.0930% 36.56\nEnglish 1452 18.15% 45.88% 0.40\na A world population of eight billion was used for this calculation. 52 | Chapter 2: Understanding Foundation Models",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 76,
+            "metadata": {
+              "chapter": 2,
+              "section": "training_data",
+              "char_length": 658
+            },
+            "score": 0.016001024065540194,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 2,
+            "sparse_rank": 3
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p75_p003 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 75]\nAn analysis of the Common Crawl dataset shows that\nEnglish accounts for almost half of the data (45.88%), making it eight times more\nprevalent than the second-most common language, Russian (5.97%) (Lai et al., 2023). See Table 2-1 for a list of languages with at least 1% in Common Crawl. Languages\nwith limited availability as training data—typically languages not included in this list\n—are considered low-resource. Training Data | 51\n\n[chip-huyen-ai-engineering-ch1-2_p74_p003 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 74]\nIn 2022 and\n2023, this organization crawled approximately 2–3 billion web pages each month. Google provides a clean subset of Common Crawl called the Colossal Clean Crawled\nCorpus, or C4 for short. The data quality of Common Crawl, and C4 to a certain extent, is questionablethink clickbait, misinformation, propaganda, conspiracy theories, racism, misogyny,\nand every sketchy website you’ve ever seen or avoided on the internet. A study by the\nWashington Post shows that the 1,000 most common websites in the dataset include\nseveral media outlets that rank low on NewsGuard’s scale for trustworthiness . In lay\nterms, Common Crawl contains plenty of fake news. 50 | Chapter 2: Understanding Foundation Models",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p75_p003",
+          "chip-huyen-ai-engineering-ch1-2_p74_p003"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_ms": 6322.57
+  },
+  {
+    "query_id": "q19",
+    "split": "test",
+    "question": "What level of generation does test time compute target compared to individual token sampling?",
+    "answerable": true,
+    "status": "answered",
+    "answer": "Test time compute targets the generation of multiple outputs for the same input, which is a higher level of generation compared to individual token sampling, where only one token is generated at a time. This approach increases the chance of obtaining good responses by generating multiple outputs and selecting the best one, as mentioned in [chip-huyen-ai-engineering-ch1-2_p120_p000].",
+    "citations": [
+      "chip-huyen-ai-engineering-ch1-2_p120_p000"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "test time compute target vs individual token sampling",
+        "filter": null,
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p120_p000",
+            "text": "29 There are things you can do to reduce the cost of generating multiple outputs for the same input. For example, the input might only be processed once and reused for all outputs. Test Time Compute\nThe last section discussed how a model might sample the next token. This section\ndiscusses how a model might sample the whole output. One simple way to improve a model’s response quality is test time compute: instead of\ngenerating only one response per query, you generate multiple responses to increase\nthe chance of good responses. One way to do test time compute is the best of N technique discussed earlier in this chapter—you randomly generate multiple outputs and\npick one that works best. However, you can also be more strategic about how to generate multiple outputs.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 120,
+            "metadata": {
+              "chapter": 2,
+              "section": "test_time_compute",
+              "char_length": 774
+            },
+            "score": 0.016133229247983348,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 1,
+            "sparse_rank": 3
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p121_p003",
+            "text": "DeepMind further proves the value of test time compute, arguing that scaling test\ntime compute (e.g., allocating more compute to generate more outputs during inference) can be more efficient than scaling model parameters ( Snell et al., 2024 ). The\nsame paper asks an interesting question: If an LLM is allowed to use a fixed but nontrivial amount of inference-time compute, how much can it improve its performance\non a challenging prompt? Sampling | 97",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 121,
+            "metadata": {
+              "chapter": 2,
+              "section": "test_time_compute",
+              "char_length": 453
+            },
+            "score": 0.015772478887232988,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 6,
+            "sparse_rank": 1
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p120_p002",
+            "text": "On average, generating two outputs costs\napproximately twice as much as generating one.29\nI use the term test time compute to be consistent with the existing\nliterature, even though several early reviewers protested that this\nterm is confusing. In AI research, test time is typically used to refer\nto inference because researchers mostly only do inference to test a\nmodel. However, this technique can be applied to models in production in general. It’s test time compute because the number of\noutputs you can sample is determined by how much compute you\ncan allocate to each inference call. To pick the best output, you can either show users multiple outputs and let them\nchoose the one that works best for them, or you can devise a method to select the best\none.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 120,
+            "metadata": {
+              "chapter": 2,
+              "section": "test_time_compute",
+              "char_length": 763
+            },
+            "score": 0.015749007936507936,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 3,
+            "sparse_rank": 4
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p120_p000 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 120]\n29 There are things you can do to reduce the cost of generating multiple outputs for the same input. For example, the input might only be processed once and reused for all outputs. Test Time Compute\nThe last section discussed how a model might sample the next token. This section\ndiscusses how a model might sample the whole output. One simple way to improve a model’s response quality is test time compute: instead of\ngenerating only one response per query, you generate multiple responses to increase\nthe chance of good responses. One way to do test time compute is the best of N technique discussed earlier in this chapter—you randomly generate multiple outputs and\npick one that works best. However, you can also be more strategic about how to generate multiple outputs.",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p120_p000"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_ms": 8119.32
+  },
+  {
+    "query_id": "q20",
+    "split": "test",
+    "question": "In Chapter 2 under post-training, how many volunteers did LAION mobilize to create conversational data?",
+    "answerable": true,
+    "status": "answered",
+    "answer": "LAION mobilized 13,500 volunteers worldwide to generate conversational data, which consisted of 10,000 conversations and 161,443 messages in 35 different languages [chip-huyen-ai-engineering-ch1-2_p107_p000].",
+    "citations": [
+      "chip-huyen-ai-engineering-ch1-2_p107_p000"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "LAION volunteers conversational data Chapter 2 post-training",
+        "filter": {
+          "chapter": 2,
+          "section": "post_training"
+        },
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p107_p000",
+            "text": "Not everyone can afford to follow the high-quality human annotation approach. LAION, a non-profit organization, mobilized 13,500 volunteers worldwide to generate 10,000 conversations, which consist of 161,443 messages in 35 different languages, annotated with 461,292 quality ratings. Since the data was generated by\nvolunteers, there wasn’t much control for biases. In theory, the labelers that teach\nmodels the human preference should be representative of the human population. The\ndemographic of labelers for LAION is skewed. For example, in a self-reported survey,\n90% of volunteer labelers identified as male (Köpf et al., 2023). DeepMind used simple heuristics to filter for conversations from internet data to\ntrain their model Gopher.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 107,
+            "metadata": {
+              "chapter": 2,
+              "section": "post_training",
+              "char_length": 742
+            },
+            "score": 0.01639344262295082,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 1,
+            "sparse_rank": 1
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p102_p001",
+            "text": "The goal of post-training is to address both of these issues. Every model’s post-training is different. However, in general, post-training consists\nof two steps:\n1. Supervised finetuning (SFT): Finetune the pre-trained model on high-quality\ninstruction data to optimize models for conversations instead of completion. 2. Preference finetuning: Further finetune the model to output responses that align\nwith human preference. Preference finetuning is typically done with reinforcement learning (RL). 22 Techniques for preference finetuning include reinforcement learning from human feedback (RLHF) (used by GPT-3.5 and Llama 2 ),\nDPO (Direct Preference Optimization) (used by Llama 3 ), and reinforcement\nlearning from AI feedback (RLAIF) (potentially used by Claude).",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 102,
+            "metadata": {
+              "chapter": 2,
+              "section": "post_training",
+              "char_length": 767
+            },
+            "score": 0.015873015873015872,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 3,
+            "sparse_rank": 3
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p105_p001",
+            "text": "Note that\nthis distribution doesn’t contain multimodal tasks, as InstructGPT is a text-only\nmodel. Figure 2-12. The distribution of prompts used to finetune InstructGPT. The graph is\ncreated based on the numbers from the OpenAI paper. Good teachers are important for humans to learn. Similarly, good labelers are important for AIs to learn how to conduct intelligent conversations. Unlike traditional data\nlabeling, which can often be done with little or no domain expertise, demonstration\nPost-Training | 81",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 105,
+            "metadata": {
+              "chapter": 2,
+              "section": "post_training",
+              "char_length": 508
+            },
+            "score": 0.01527518656716418,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 4,
+            "sparse_rank": 7
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p107_p000 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 107]\nNot everyone can afford to follow the high-quality human annotation approach. LAION, a non-profit organization, mobilized 13,500 volunteers worldwide to generate 10,000 conversations, which consist of 161,443 messages in 35 different languages, annotated with 461,292 quality ratings. Since the data was generated by\nvolunteers, there wasn’t much control for biases. In theory, the labelers that teach\nmodels the human preference should be representative of the human population. The\ndemographic of labelers for LAION is skewed. For example, in a self-reported survey,\n90% of volunteer labelers identified as male (Köpf et al., 2023). DeepMind used simple heuristics to filter for conversations from internet data to\ntrain their model Gopher.",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p107_p000"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_ms": 6819.83
+  },
+  {
+    "query_id": "q_abs_test_01",
+    "split": "test",
+    "question": "What is the exact volume discount percentage offered by OpenAI for non-profit organizations deploying GPT-4o?",
+    "answerable": false,
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "OpenAI GPT-4o volume discount percentage non-profit organizations",
+        "filter": null,
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p107_p000",
+            "text": "Not everyone can afford to follow the high-quality human annotation approach. LAION, a non-profit organization, mobilized 13,500 volunteers worldwide to generate 10,000 conversations, which consist of 161,443 messages in 35 different languages, annotated with 461,292 quality ratings. Since the data was generated by\nvolunteers, there wasn’t much control for biases. In theory, the labelers that teach\nmodels the human preference should be representative of the human population. The\ndemographic of labelers for LAION is skewed. For example, in a self-reported survey,\n90% of volunteer labelers identified as male (Köpf et al., 2023). DeepMind used simple heuristics to filter for conversations from internet data to\ntrain their model Gopher.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 107,
+            "metadata": {
+              "chapter": 2,
+              "section": "post_training",
+              "char_length": 742
+            },
+            "score": 0.014558022622538752,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 17,
+            "sparse_rank": 2
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p32_p002",
+            "text": "When OpenAI’s first generative pre-trained transformer (GPT) model came out in\nJune 2018, it had 117 million parameters, and that was considered large. In February\n2019, when OpenAI introduced GPT-2 with 1.5 billion parameters, 117 million was\ndowngraded to be considered small. As of the writing of this book, a model with 100\nbillion parameters is considered large. Perhaps one day, this size will be considered\nsmall. Before we move on to the next section, I want to touch on a question that is usually\ntaken for granted: Why do larger models need more data? Larger models have more\ncapacity to learn, and, therefore, would need more training data to maximize their\nperformance.8 You can train a large model on a small dataset too, but it’d be a waste\nof compute.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 32,
+            "metadata": {
+              "chapter": 1,
+              "section": "the_rise_of_ai_engineering",
+              "char_length": 766
+            },
+            "score": 0.01391304347826087,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 15,
+            "sparse_rank": 9
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p101_p001",
+            "text": "Once the publicly available data is exhausted, the most feasible paths for more\nhuman-generated training data is proprietary data. Unique proprietary data—copyrighted books, translations, contracts, medical records, genome sequences, and so\nforth—will be a competitive advantage in the AI race. This is a reason why OpenAI\nnegotiated deals with publishers and media outlets including Axel Springer and the\nAssociated Press. It’s not surprising that in light of ChatGPT, many companies, including Reddit and\nStack Overflow , have changed their data terms to prevent other companies from\nscraping their data for their models. Longpre et al.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 101,
+            "metadata": {
+              "chapter": 2,
+              "section": "model_architecture",
+              "char_length": 638
+            },
+            "score": 0.013752276867030965,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 1,
+            "sparse_rank": null
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p107_p000 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 107]\nNot everyone can afford to follow the high-quality human annotation approach. LAION, a non-profit organization, mobilized 13,500 volunteers worldwide to generate 10,000 conversations, which consist of 161,443 messages in 35 different languages, annotated with 461,292 quality ratings. Since the data was generated by\nvolunteers, there wasn’t much control for biases. In theory, the labelers that teach\nmodels the human preference should be representative of the human population. The\ndemographic of labelers for LAION is skewed. For example, in a self-reported survey,\n90% of volunteer labelers identified as male (Köpf et al., 2023). DeepMind used simple heuristics to filter for conversations from internet data to\ntrain their model Gopher.",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p107_p000"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "OpenAI GPT-4o volume discount percentage for non-profit organizations",
+        "filter": null,
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p107_p000",
+            "text": "Not everyone can afford to follow the high-quality human annotation approach. LAION, a non-profit organization, mobilized 13,500 volunteers worldwide to generate 10,000 conversations, which consist of 161,443 messages in 35 different languages, annotated with 461,292 quality ratings. Since the data was generated by\nvolunteers, there wasn’t much control for biases. In theory, the labelers that teach\nmodels the human preference should be representative of the human population. The\ndemographic of labelers for LAION is skewed. For example, in a self-reported survey,\n90% of volunteer labelers identified as male (Köpf et al., 2023). DeepMind used simple heuristics to filter for conversations from internet data to\ntrain their model Gopher.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 107,
+            "metadata": {
+              "chapter": 2,
+              "section": "post_training",
+              "char_length": 742
+            },
+            "score": 0.014558022622538752,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 17,
+            "sparse_rank": 2
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p94_p002",
+            "text": "To avoid this confusion, some companies, including OpenAI, use FLOP/s-day in place of FLOPs to\nmeasure compute requirements:\n1 FLOP/s-day = 60 × 60 × 24 = 86,400 FLOPs\nThis book uses FLOPs for counting floating point operations and\nFLOP/s for FLOPs per second. Assume that you have 256 H100s. If you can use them at their maximum capacity\nand make no training mistakes, it’d take you (3.14 × 1023) / (256 × 5.2 × 10 18)\n= ~236 days, or approximately 7.8 months, to train GPT-3-175B. 70 | Chapter 2: Understanding Foundation Models",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 94,
+            "metadata": {
+              "chapter": 2,
+              "section": "model_architecture",
+              "char_length": 530
+            },
+            "score": 0.013899613899613899,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 10,
+            "sparse_rank": 14
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p101_p001",
+            "text": "Once the publicly available data is exhausted, the most feasible paths for more\nhuman-generated training data is proprietary data. Unique proprietary data—copyrighted books, translations, contracts, medical records, genome sequences, and so\nforth—will be a competitive advantage in the AI race. This is a reason why OpenAI\nnegotiated deals with publishers and media outlets including Axel Springer and the\nAssociated Press. It’s not surprising that in light of ChatGPT, many companies, including Reddit and\nStack Overflow , have changed their data terms to prevent other companies from\nscraping their data for their models. Longpre et al.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 101,
+            "metadata": {
+              "chapter": 2,
+              "section": "model_architecture",
+              "char_length": 638
+            },
+            "score": 0.013752276867030965,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 1,
+            "sparse_rank": null
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p107_p000 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 107]\nNot everyone can afford to follow the high-quality human annotation approach. LAION, a non-profit organization, mobilized 13,500 volunteers worldwide to generate 10,000 conversations, which consist of 161,443 messages in 35 different languages, annotated with 461,292 quality ratings. Since the data was generated by\nvolunteers, there wasn’t much control for biases. In theory, the labelers that teach\nmodels the human preference should be representative of the human population. The\ndemographic of labelers for LAION is skewed. For example, in a self-reported survey,\n90% of volunteer labelers identified as male (Köpf et al., 2023). DeepMind used simple heuristics to filter for conversations from internet data to\ntrain their model Gopher.",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p107_p000"
+        ]
+      },
+      {
+        "event": "invalid_or_missing_citations"
+      }
+    ],
+    "elapsed_ms": 17791.04
+  },
+  {
+    "query_id": "q_abs_test_02",
+    "split": "test",
+    "question": "According to Chapter 2, what is the exact hardware spec of Google TPU v5e pod optical interconnect bandwidth?",
+    "answerable": false,
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "Google TPU v5e pod optical interconnect bandwidth hardware specifications",
+        "filter": null,
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p95_p000",
+            "text": "17 As of this writing, cloud providers are offering H100s for around $2 to $5 per hour. As compute is getting\nrapidly cheaper, this number will get much lower. However, it’s unlikely you can use your machines at their peak capacity all the time. Utilization measures how much of the maximum compute capacity you can use. What’s considered good utilization depends on the model, the workload, and the\nhardware. Generally, if you can get half the advertised performance, 50% utilization,\nyou’re doing okay. Anything above 70% utilization is considered great. Don’t let this\nrule stop you from getting even higher utilization. Chapter 9 discusses hardware metrics and utilization in more detail.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 95,
+            "metadata": {
+              "chapter": 2,
+              "section": "model_architecture",
+              "char_length": 692
+            },
+            "score": 0.015640273704789834,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 6,
+            "sparse_rank": 2
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p82_p002",
+            "text": "Transformer architecture\nTo understand the transformer, let’s look at the problem it was created to solve. The\ntransformer architecture was popularized on the heels of the success of the seq2seq\n(sequence-to-sequence) architecture. At the time of its introduction in 2014, seq2seq\nprovided significant improvement on then-challenging tasks: machine translation\nand summarization. In 2016, Google incorporated seq2seq into Google Translate , an\nupdate that they claimed to have given them the “largest improvements to date for\nmachine translation quality”. This generated a lot of interest in seq2seq, making it the\ngo-to architecture for tasks involving sequences of text. At a high level, seq2seq contains an encoder that processes inputs and a decoder that\ngenerates outputs.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 82,
+            "metadata": {
+              "chapter": 2,
+              "section": "model_architecture",
+              "char_length": 777
+            },
+            "score": 0.01482213438735178,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 9,
+            "sparse_rank": 6
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p68_p002",
+            "text": "For a task like\nchatbots, however, there are so many possible responses to each prompt that it is\nimpossible to curate an exhaustive list of ground truths to compare a model’s\nresponse to. The existence of so many adaptation techniques also makes evaluation harder. A system that performs poorly with one technique might perform much better with\nanother. When Google launched Gemini in December 2023, they claimed that Gemini is better than ChatGPT in the MMLU benchmark ( Hendrycks et al., 2020 ). Google had evaluated Gemini using a prompt engineering technique called CoT@32. In\nthis technique, Gemini was shown 32 examples, while ChatGPT was shown only 5\nexamples. When both were shown five examples, ChatGPT performed better, as\nshown in Table 1-5.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 68,
+            "metadata": {
+              "chapter": 1,
+              "section": "ai_engineering_stack",
+              "char_length": 753
+            },
+            "score": 0.014815627743634766,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 7,
+            "sparse_rank": 8
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p95_p000 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 95]\n17 As of this writing, cloud providers are offering H100s for around $2 to $5 per hour. As compute is getting\nrapidly cheaper, this number will get much lower. However, it’s unlikely you can use your machines at their peak capacity all the time. Utilization measures how much of the maximum compute capacity you can use. What’s considered good utilization depends on the model, the workload, and the\nhardware. Generally, if you can get half the advertised performance, 50% utilization,\nyou’re doing okay. Anything above 70% utilization is considered great. Don’t let this\nrule stop you from getting even higher utilization. Chapter 9 discusses hardware metrics and utilization in more detail.",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p95_p000"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "Google TPU v5e pod optical interconnect bandwidth specifications",
+        "filter": null,
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p68_p002",
+            "text": "For a task like\nchatbots, however, there are so many possible responses to each prompt that it is\nimpossible to curate an exhaustive list of ground truths to compare a model’s\nresponse to. The existence of so many adaptation techniques also makes evaluation harder. A system that performs poorly with one technique might perform much better with\nanother. When Google launched Gemini in December 2023, they claimed that Gemini is better than ChatGPT in the MMLU benchmark ( Hendrycks et al., 2020 ). Google had evaluated Gemini using a prompt engineering technique called CoT@32. In\nthis technique, Gemini was shown 32 examples, while ChatGPT was shown only 5\nexamples. When both were shown five examples, ChatGPT performed better, as\nshown in Table 1-5.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 68,
+            "metadata": {
+              "chapter": 1,
+              "section": "ai_engineering_stack",
+              "char_length": 753
+            },
+            "score": 0.015268065268065269,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 6,
+            "sparse_rank": 5
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p82_p002",
+            "text": "Transformer architecture\nTo understand the transformer, let’s look at the problem it was created to solve. The\ntransformer architecture was popularized on the heels of the success of the seq2seq\n(sequence-to-sequence) architecture. At the time of its introduction in 2014, seq2seq\nprovided significant improvement on then-challenging tasks: machine translation\nand summarization. In 2016, Google incorporated seq2seq into Google Translate , an\nupdate that they claimed to have given them the “largest improvements to date for\nmachine translation quality”. This generated a lot of interest in seq2seq, making it the\ngo-to architecture for tasks involving sequences of text. At a high level, seq2seq contains an encoder that processes inputs and a decoder that\ngenerates outputs.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 82,
+            "metadata": {
+              "chapter": 2,
+              "section": "model_architecture",
+              "char_length": 777
+            },
+            "score": 0.01518288474810214,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 9,
+            "sparse_rank": 3
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p89_p001",
+            "text": "For more information, watch Sutskever’s talk at the Simons Institute at Berkeley (2023). 12 The transformer was originally designed by Google to run fast on Tensor Processing Units (TPUs), and was\nonly later optimized on GPUs. Other model architectures\nWhile the transformer model dominates the landscape, it’s not the only architecture. Since AlexNet revived the interest in deep learning in 2012, many architectures have\ngone in and out of fashion. Seq2seq was in the limelight for four years (2014–2018). GANs (generative adversarial networks) captured the collective imagination a bit\nlonger (2014–2019). Compared to architectures that came before it, the transformer\nis sticky. It’s been around since 2017. 10 How long until something better comes\nalong?",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 89,
+            "metadata": {
+              "chapter": 2,
+              "section": "model_architecture",
+              "char_length": 759
+            },
+            "score": 0.013846447669977082,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 8,
+            "sparse_rank": 17
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p95_p000 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 95]\n17 As of this writing, cloud providers are offering H100s for around $2 to $5 per hour. As compute is getting\nrapidly cheaper, this number will get much lower. However, it’s unlikely you can use your machines at their peak capacity all the time. Utilization measures how much of the maximum compute capacity you can use. What’s considered good utilization depends on the model, the workload, and the\nhardware. Generally, if you can get half the advertised performance, 50% utilization,\nyou’re doing okay. Anything above 70% utilization is considered great. Don’t let this\nrule stop you from getting even higher utilization. Chapter 9 discusses hardware metrics and utilization in more detail.",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p95_p000"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "Google TPU v5e pod optical interconnect bandwidth specifications",
+        "filter": null,
+        "results": [
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p68_p002",
+            "text": "For a task like\nchatbots, however, there are so many possible responses to each prompt that it is\nimpossible to curate an exhaustive list of ground truths to compare a model’s\nresponse to. The existence of so many adaptation techniques also makes evaluation harder. A system that performs poorly with one technique might perform much better with\nanother. When Google launched Gemini in December 2023, they claimed that Gemini is better than ChatGPT in the MMLU benchmark ( Hendrycks et al., 2020 ). Google had evaluated Gemini using a prompt engineering technique called CoT@32. In\nthis technique, Gemini was shown 32 examples, while ChatGPT was shown only 5\nexamples. When both were shown five examples, ChatGPT performed better, as\nshown in Table 1-5.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 68,
+            "metadata": {
+              "chapter": 1,
+              "section": "ai_engineering_stack",
+              "char_length": 753
+            },
+            "score": 0.015268065268065269,
+            "rank": 1,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 6,
+            "sparse_rank": 5
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p82_p002",
+            "text": "Transformer architecture\nTo understand the transformer, let’s look at the problem it was created to solve. The\ntransformer architecture was popularized on the heels of the success of the seq2seq\n(sequence-to-sequence) architecture. At the time of its introduction in 2014, seq2seq\nprovided significant improvement on then-challenging tasks: machine translation\nand summarization. In 2016, Google incorporated seq2seq into Google Translate , an\nupdate that they claimed to have given them the “largest improvements to date for\nmachine translation quality”. This generated a lot of interest in seq2seq, making it the\ngo-to architecture for tasks involving sequences of text. At a high level, seq2seq contains an encoder that processes inputs and a decoder that\ngenerates outputs.",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 82,
+            "metadata": {
+              "chapter": 2,
+              "section": "model_architecture",
+              "char_length": 777
+            },
+            "score": 0.01518288474810214,
+            "rank": 2,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 9,
+            "sparse_rank": 3
+          },
+          {
+            "id": "chip-huyen-ai-engineering-ch1-2_p89_p001",
+            "text": "For more information, watch Sutskever’s talk at the Simons Institute at Berkeley (2023). 12 The transformer was originally designed by Google to run fast on Tensor Processing Units (TPUs), and was\nonly later optimized on GPUs. Other model architectures\nWhile the transformer model dominates the landscape, it’s not the only architecture. Since AlexNet revived the interest in deep learning in 2012, many architectures have\ngone in and out of fashion. Seq2seq was in the limelight for four years (2014–2018). GANs (generative adversarial networks) captured the collective imagination a bit\nlonger (2014–2019). Compared to architectures that came before it, the transformer\nis sticky. It’s been around since 2017. 10 How long until something better comes\nalong?",
+            "source_id": "chip-huyen-ai-engineering-ch1-2",
+            "source": "Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf",
+            "page": 89,
+            "metadata": {
+              "chapter": 2,
+              "section": "model_architecture",
+              "char_length": 759
+            },
+            "score": 0.013846447669977082,
+            "rank": 3,
+            "strategy": "hybrid_rrf",
+            "dense_rank": 8,
+            "sparse_rank": 17
+          }
+        ],
+        "context": "[chip-huyen-ai-engineering-ch1-2_p95_p000 | Chip Huyen - AI Engineering_ Building Applications with Foundation Models-O'Reilly Media (2025).pdf | page 95]\n17 As of this writing, cloud providers are offering H100s for around $2 to $5 per hour. As compute is getting\nrapidly cheaper, this number will get much lower. However, it’s unlikely you can use your machines at their peak capacity all the time. Utilization measures how much of the maximum compute capacity you can use. What’s considered good utilization depends on the model, the workload, and the\nhardware. Generally, if you can get half the advertised performance, 50% utilization,\nyou’re doing okay. Anything above 70% utilization is considered great. Don’t let this\nrule stop you from getting even higher utilization. Chapter 9 discusses hardware metrics and utilization in more detail.",
+        "context_ids": [
+          "chip-huyen-ai-engineering-ch1-2_p95_p000"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_ms": 5592.17
+  }
+]
